@@ -1,0 +1,623 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Movement, Actions, and Combat</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="08efb93c-7fe5-479c-bb58-224cd4e1f27c" class="page sans"><header><h1 class="page-title">Movement, Actions, and Combat</h1><table class="properties"><tbody><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M6.98643729,14.0000972 C5.19579566,14.0000972 3.40419152,13.3106896 2.04245843,11.9323606 C-0.681017475,9.21200555 -0.680780251,4.76029539 2.04293482,2.04012507 C4.76664406,-0.68004331 9.22427509,-0.68004331 11.9480135,2.04013479 C13.272481,3.36277455 14,5.1330091 14,6.99552762 C14,8.87640182 13.2721894,10.6285043 11.9480135,11.9509302 C10.5679344,13.3105924 8.77756503,14.0000972 6.98643729,14.0000972 Z M10.2705296,7.00913883 L10.2705296,8.46099754 L10.2705296,8.65543362 L10.076181,8.65543362 L8.6543739,8.65543362 L5.72059514,8.65543362 L5.52619796,8.65543362 L5.52619796,8.46099754 L5.52619796,5.52541044 L5.52619796,3.37946773 L5.52619796,3.18502193 L5.72059514,3.18502193 L7.17253164,3.18502193 L7.36692883,3.18502193 L7.36692883,3.37946773 L7.36692883,6.81467358 L10.076181,6.81467358 L10.2705296,6.81467358 L10.2705296,7.00913883 Z M12.1601539,6.99552762 C12.1601539,5.61697497 11.6190112,4.32597154 10.6393933,3.34769528 C8.63253764,1.34336744 5.35197452,1.34061603 3.34153136,3.33944106 C3.33868273,3.34219247 3.33607716,3.34494388 3.33322852,3.34769528 C1.32397148,5.35459953 1.32372842,8.63641682 3.33322852,10.6433794 C5.34295224,12.6504489 8.62968901,12.6504489 10.6393933,10.6433794 C11.6190112,9.66506426 12.1601539,8.37408027 12.1601539,6.99552762 Z"></path></svg></span>Created</th><td><time>@Dec 18, 2019 5:44 PM</time></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-yellow">Needs Review</span><span class="selected-value select-value-color-green">Player</span><span class="selected-value select-value-color-pink">Rules</span></td></tr></tbody></table></header><div class="page-body"><p id="59da547a-76f5-4829-8e2d-39e5d4a340f6" class="">
+</p><ul id="58215273-b644-46c5-953d-9f2c7d1c1047" class="toggle"><li><details open=""><summary>Actions</summary><p id="e2d4c1ac-8f45-4c64-8b4e-2bbe39a7165c" class=""><strong>Action points:</strong></p><p id="77eb6434-6920-436f-9667-aba81579ed68" class="">Every character has action points, movement points, and combat points.</p><p id="5decc182-6b29-4992-a439-024f670bcbea" class=""><em>Movement points (MP)</em> can be used exclusively for movement and related actions.</p><p id="c8f2b713-0b1e-4899-9849-db0b66487f7f" class=""><em>Combat points (CP)</em> can only be used for attack, defence, and other combat actions.</p><p id="4dd02274-2633-404e-9fa7-424ecd0b86df" class=""><em>Action points (AP)</em> can be used for any action, movement and attack included.</p></details></li></ul><ul id="e01b71e0-3fd8-47ea-b7d9-788a9d102f5d" class="toggle"><li><details open=""><summary>Movement</summary><p id="b10a1594-5723-43a3-94da-5cc4c95d00d4" class=""><strong>Movement</strong><div class="indented"><p id="16c174b6-6cc0-4f27-9384-8116c5ff331f" class="">Moving 1 metre takes one MP, Crawling 1 metre takes 2 MP</p><p id="fd8e10e5-7e62-4ec7-87e2-0c3da584eb37" class="">Standing from prone takes 10 MP </p><p id="8e3e4a57-30bb-44e1-9e48-3a3bed04c516" class="">Opening or closing a normal door takes 2 MP, A heavy door takes 5 MP</p><p id="51116141-f189-4954-acb1-0f1bad46d540" class="">Climbing 1 meter costs 5MP</p><p id="c1725350-ccab-438b-8fcd-478227eee5bd" class="">Turning 90° costs 1 MP</p></div></p><p id="a2c44dd2-f42d-4c70-a9fd-08bb31460b24" class=""><strong>Stealth</strong><div class="indented"><p id="2416b7cf-fc6e-4a45-af69-6c1b05cbcba2" class="">A character breaks stealth if they are obviously within the vision of another character, provided they are visible. If this is not the case, the stealthed character must perform a stealth check versus a perception check by the character who is attempting to spot them.</p><p id="5b62bc8f-43fe-4c80-b30f-c315f733cfb3" class="">Stealth is relative to every actor in the vicinity. It is possible to be in stealth relative to one character and visible to another. If an enemy is searching for a stealthed player, they may notify other enemies to search for the stealthed player. Additionally, other enemies may notice that one of their number is searching for something and join in the search. If found, they may notify nearby enemies of the player’s position, breaking stealth for the character relative to all enemies notified.</p></div></p><p id="e23b9103-5567-4013-a56b-b43c38b13626" class=""><strong>Fall Damage</strong><div class="indented"><p id="c59d6e7e-c0e5-4ef2-9cc3-41c7d5978f43" class="">You take 1 minor wound to both legs (or whichever body part you land on) after a 5m fall. This damage is upgraded by 1 level every 5m.</p></div></p></details></li></ul><ul id="0b90c2c7-cbe2-4145-89c9-a9e5417cdd48" class="toggle"><li><details open=""><summary>Combat</summary><p id="18dbe56c-9159-481f-be20-a3033528bde4" class="">At the most basic level, any attack works by targetting an opponent&#x27;s limb, rolling, and inflicting damage if the attack hits. Hitting the torso requires a minimum roll of 10+, hitting an arm or leg requires a roll of 12+, and hitting the head requires a roll of 15+.</p><p id="e60793db-aa21-4a00-b6c0-0116e290ec44" class=""><strong>Initiative</strong></p><p id="e0bafe3e-0af5-4eab-8f88-bb3033db7862" class="">Before any attacks may be made, the turn order, or <em>Initiative, </em>must be determined. At the start of combat, all participants make an AGL roll. This roll is your Initiative, and turns are taken in order from highest to lowest Initiative. In the event of a tie, all involved parties make a PER roll, to determine what order the turns are taken. In the event of a tie here, the turn order with the highest combined AGL and PER scores goes first, in the event of a tie here, all players roll 1d6 to determine the order. In the event of a tie, this is repeated until a a turn order is determined. Once the end of the initiative order is reached, a new round begins from the top of the order. Every round is equivalent to 5 seconds. At the beginning of your turn, you recover any spent AP/MP/CP.</p><p id="2f629065-7b11-414c-8db5-6542bec7e7bd" class=""><strong>Cover</strong></p><p id="a26ed413-4085-420a-8bd9-089e6c15f572" class="">Every battlefield may have 2 types of cover: low or high. Low cover imposes a -3 modifier to hit, high cover imposes a -5 modifier to hit. Cover does not affect melee attacks. Cover can be negated by flanking an enemy in cover.</p><p id="cc779880-5a62-4042-96b2-49bed216a526" class=""><strong>Switching Weapons</strong></p><p id="47e3c709-2ff9-41dc-800a-9b8ece33fea3" class="">Switching weapons costs 3 CP</p><p id="94c3e25e-198b-4be8-8df1-a170ed265131" class=""><strong>Melee</strong></p><p id="3d6bee8f-b594-44b1-9a00-83118f406e25" class="">Melee combat works as follows:</p><p id="d03d51ea-1d91-45a0-9daa-04e7cdbc3973" class="">Attacker makes their attack roll, targeting a specific limb. At this point, the defender may choose one of four options.</p><p id="5a6a626d-7c0b-4b55-86da-c09efa873df8" class="">If the defender chooses to <em>parry,</em> the defender rolls to hit against the attack (this costs the same amount of CP as a normal attack). If the defender rolls higher, the attack ends and the defender may make a counterattack at 50% CP cost. If the attacker rolls higher, the attack proceeds as normal. A parry can only be attempted if the target is in front of you. Counterattacks cannot be dodged, blocked, or parried.</p><p id="cffc5825-d196-4c27-aed6-08086527e977" class="">If the defender chooses to <em>dodge</em>, the defender rolls an AGL check against the attack, at a cost of 5 MP. If the defender rolls higher than the attacker, the attack ends. If the attacker rolls higher, the attack happens as normal.</p><p id="79795514-28d9-4294-b6ac-a67d2bc56302" class="">If the defender chooses to <em>block</em>, the defender rolls a STR against the attack, at a cost of 5 CP. If the defender rolls higher than the attacker, the attack ends. If the attacker rolls higher, the attack happens as normal. Blocking may be attempted with a ranged weapon at a cost of 15CP</p><p id="40e1fee1-4554-473b-aef8-3c05f30406aa" class="">If the defender chooses to <em>stand their ground</em>, they attempt to withstand the attack with nought but their armor, responding in no way to the attack. This does not mean an attack is a guaranteed hit, as all attacks must hit a certain threshold to hit, determined by the weapon.</p><p id="81b920ae-a8fa-4ffd-8e38-f7e388f547e8" class=""><strong>Unarmed combat</strong> <div class="indented"><p id="ff0aa375-56f7-42d8-a15d-8881b08e8cc2" class="">Unarmed combat is melee combat that does not involve weapons, and is treated as such.</p><p id="e664e1c7-7338-4e9f-a3f1-d4a0c98d1422" class="">By default, fists deal 1 minor wound of damage and have no bonuses to hit. Unarmed attacks against an unarmored head do double damage. Unarmed attackers may not parry melee attacks made with a weapon.</p><p id="fd597824-1ad0-48d4-860e-09b5ca022ba1" class=""><strong>Grappling</strong><div class="indented"><p id="fef9eefc-85c5-458a-af9c-18a77c10ede3" class="">Grappling is the act of attempting to restrain your opponent in order to gain a combat advantage. </p><p id="eeab7491-afe3-4d9d-9956-b7a71ced4406" class="">The instigating party of a grapple attempt makes an unarmed attack against the defender with the intent to grapple. <div class="indented"><p id="ab8ee2b4-fb6b-4458-863b-99a430b94264" class="">Attempting to <em>stand your ground</em> results in an immediate defensive fail and successful grapple. A successful <em>dodge</em> means the grapple fails, a successful <em>parry</em> allows for an attempt to counter-grapple. Unlike a normal melee attack, this can proceed recursively; a counter-grapple attempt can, itself be grappled, unless indicated otherwise.</p></div></p><p id="a570927c-df09-405f-b650-29d4c4cfa215" class="">Should the defending party dodge, block, or parry the grapple attempt, the grapple ends.</p><p id="f6e83428-2ed7-4c2d-8039-c3e7b74847c1" class="">If the grapple was successful, the defender is restrained, and any reaction actions are suspended until they free themselves.<div class="indented"><p id="a37f8676-d377-4bd3-af69-9aab439c0886" class="">The instigating player may decide to knock the grapple target prone. If they do so, both players are knocked prone.<div class="indented"><p id="f8acdfd4-cee4-4a78-a809-4a0c041ae169" class="">If the latter is the case, the restrained character must make a successful melee attack against the restraining character with disadvantage to hit. If successful, both are still prone, but neither is restrained.</p></div></p><p id="8ed62c28-5ae4-4396-b0ce-8ed8a5fb28cd" class="">While grappled, all attacks have advantage against the restrained character.</p></div></p></div></p></div></p><p id="00656225-4e21-4905-904c-541d51d54e6a" class=""><strong>Ranged</strong><div class="indented"><p id="d91610a7-ed77-4917-8519-02ef4d8dbe5b" class="">Ranged weapons have a fixed damage value, critical hits increase this value by one level.</p><p id="83958274-2131-4285-a9b8-d22f0c125a6a" class="">If your attack roll does not meet the enemy’s hit threshold, the wound is downgraded a number of levels equal to the difference between the threshold and the actual value.</p><p id="b24b4b64-c134-4acb-a32c-931a6fd0cdf3" class="">Additionally, all ranged weapons have an optimal range.</p><p id="f800d080-f456-4aa7-9e93-2d55e0a968c3" class="">If closer than this optimal range, the chance to hit goes down by the weapon’s proximity modifier.</p><p id="69d8d60e-2c62-4223-8bc0-a04af7821e23" class="">If further than this optimal range, the chance to hit goes down by the weapon’s falloff modifier.</p></div></p><p id="bfd7f598-c6e7-4822-a833-d41f60a1770b" class=""><strong>Reactions</strong><div class="indented"><p id="09aa1ec3-4839-4f06-8af3-f9e65a10e229" class="">Actions taken on the enemy turn are known as reactions .</p><p id="50ae99b8-a389-4c0e-8060-d687c98a3ec9" class="">If you end your turn with AP left over, you may spend that AP on certain actions when an enemy acts. If an enemy attempts a melee attack, you may attempt a dodge or parry (see above rules). If an enemy moves into your line of sight and you have a ranged weapon drawn, you may attempt an unaimed, unsteadied attack on them. Ranged attacks, unless specified otherwise, cannot be dodged. </p></div></p><p id="26fdfb09-c740-45a2-b23b-ce9ed38067c6" class=""><strong>Stealth attacks</strong><div class="indented"><p id="fa802e1b-92f8-4351-bf2d-f27fe44d5d6f" class="">If you make a ranged attack from stealth, immediately make a stealth check with disadvantage against a perception check made by the target. If you roll less, you are no longer in stealth to them. </p><p id="9d387e79-8216-4406-91e7-b95de2ac0dd1" class="">If you make a melee attack from stealth, you are no longer in stealth to the target. </p></div></p><p id="347f77e4-7dd1-4506-ac9f-ecfa497425d3" class=""><strong>Cover</strong><div class="indented"><p id="35552e7c-22e0-4b49-b2e7-76402d00b1db" class="">Characters may take up low or high cover to mitigate damage. Attempting to hit someone in low cover applies a -3 penalty to hit, while attempting to hit someone in high cover applies a -5 penalty to hit. Cover penalties are negated if you are at least 5m above your target.</p></div></p><p id="566be782-dc86-4b9d-ac67-cedb6ddee8ef" class=""><strong>Hacking</strong><div class="indented"><p id="4d765d65-567f-4e26-837c-67126d17c604" class="">Computer systems are divided into various subsytems, with one (or multiple, or none) entry point leading to the other systems. Hacking into systems costs 10 AP. While hacking, you are incapable of performing other actions. You may pause your progress, but if you leave the system, you must start from the beginning. Continuing to hack after pausing to perform another action costs another 10 CP and does not remove you from the system.</p><p id="9c798526-4f20-4fa2-a496-6f646eac6a47" class="">Hacking consists of an INT contest against the system node, with difficulty varying based on defences and depth in the systems.</p></div></p></details></li></ul><p id="5cb48d34-bea6-4879-a6d8-12d9c2f31549" class=""><strong>Advantage/disadvantage</strong>:<div class="indented"><p id="fb92cf83-770e-4f23-a547-415efb2e1c56" class="">In some situations, you may be in a particularly good or bad position to do something. In such a situation, you may gain a stack of advantage or disadvantage. For every such stack you have, you make any rolls an additional time. If you have advantage, you must pick the highest roll. If you have disadvantage, you must pick the lowest roll. Additionally, if you manage to acquire equal amounts of advantage and disadvantage, stacks cancel each other out.</p></div></p><p id="94196b15-feb6-4ed1-ac97-af63d9db3512" class=""><strong>Healing:</strong><div class="indented"><p id="0e3660df-ecd8-4605-ae05-e7c6a46602e2" class="">Every healing item its own stats, but, in general, healing is done by rolling either a stat or a flat die, adding any modifiers, and removing that many minor wounds. Some healing items have the capability to heal crippled limbs, and most can also stop bleeding.</p></div></p></div></article></body></html>

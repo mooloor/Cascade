@@ -1,0 +1,622 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Augmentation</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="49a90f05-95eb-435c-a304-1fde8a137901" class="page sans"><header><h1 class="page-title">Augmentation</h1><table class="properties"><tbody><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M6.98643729,14.0000972 C5.19579566,14.0000972 3.40419152,13.3106896 2.04245843,11.9323606 C-0.681017475,9.21200555 -0.680780251,4.76029539 2.04293482,2.04012507 C4.76664406,-0.68004331 9.22427509,-0.68004331 11.9480135,2.04013479 C13.272481,3.36277455 14,5.1330091 14,6.99552762 C14,8.87640182 13.2721894,10.6285043 11.9480135,11.9509302 C10.5679344,13.3105924 8.77756503,14.0000972 6.98643729,14.0000972 Z M10.2705296,7.00913883 L10.2705296,8.46099754 L10.2705296,8.65543362 L10.076181,8.65543362 L8.6543739,8.65543362 L5.72059514,8.65543362 L5.52619796,8.65543362 L5.52619796,8.46099754 L5.52619796,5.52541044 L5.52619796,3.37946773 L5.52619796,3.18502193 L5.72059514,3.18502193 L7.17253164,3.18502193 L7.36692883,3.18502193 L7.36692883,3.37946773 L7.36692883,6.81467358 L10.076181,6.81467358 L10.2705296,6.81467358 L10.2705296,7.00913883 Z M12.1601539,6.99552762 C12.1601539,5.61697497 11.6190112,4.32597154 10.6393933,3.34769528 C8.63253764,1.34336744 5.35197452,1.34061603 3.34153136,3.33944106 C3.33868273,3.34219247 3.33607716,3.34494388 3.33322852,3.34769528 C1.32397148,5.35459953 1.32372842,8.63641682 3.33322852,10.6433794 C5.34295224,12.6504489 8.62968901,12.6504489 10.6393933,10.6433794 C11.6190112,9.66506426 12.1601539,8.37408027 12.1601539,6.99552762 Z"></path></svg></span>Created</th><td><time>@Dec 24, 2019 7:16 PM</time></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-blue">Game Master</span><span class="selected-value select-value-color-yellow">Needs Review</span><span class="selected-value select-value-color-green">Player</span><span class="selected-value select-value-color-pink">Rules</span></td></tr></tbody></table></header><div class="page-body"><p id="607d7da1-6855-4aaa-90cd-9ce23a30c584" class="">Where biology fails, technology intervenes. Augmentation roughly exists in the 5 <a href="Technology%20Levels%208e82f1555a444207bc0f172eef9cf366.html">Technology Levels</a>, where alpha and beta-level components are the most common, and echo-grade components are vanishingly rare. </p><p id="dbc6e70a-7664-4347-91c7-e4a0f5323994" class="">The following list of augmentations and effects should not be considered complete or exhaustive. When augmentations are acquired by your players, consider the tech level they are acquiring, and give it some or all of the relevant stat bonuses as appropriate. Generally, Alpha-grade components range from barely functional to somewhat subpar replacements, Beta-Grade is anywhere from adequate replacement to slight improvement, and Gamma-level and above are varying levels of improvement on the human body, with Echo-grade components being the pinnacle of known technology. Brain augmentations, especially, are very dependent on GM and player interactions as to their capabilities.</p><p id="49c2ed38-8c08-4984-80cc-8d734fa14f6f" class="">Ex.: TODO</p><p id="4f59765a-addf-444c-83e6-9ddbb19eab6b" class=""><strong>Gameplay</strong>:</p><p id="852754c8-bba5-4f7c-bda7-42108044aaaa" class="">Every limb can be augmented in one way or another. The following list is not exhaustive, and more can be added as desired.</p><ul id="78492ed4-3535-44f7-b9a5-b6e6aacf4cfa" class="toggle"><li><details open=""><summary><strong>Arm Augmentations:</strong></summary><ul id="5f022bdd-11b6-4e48-8834-3e463b374df3" class="toggle"><li><details open=""><summary><em>Cyberlimbs</em></summary><p id="f6a57d6f-cd0a-4420-bea3-a34edf5d0d65" class="block-color-yellow_background">The archetypal &quot;robot arms&quot;, cyberlimbs come in many varieties, from the simplest alpha or beta-level models to cutting-edge, corporate delta-tech. Regardless of complexity, they all fulfil the same basic purpose of replacing a human arm.</p><ul id="a3d3246d-b2c3-48c9-bd94-a13673442333" class="toggle"><li><details open=""><summary><strong>Effects:</strong></summary><p id="6604fae6-dd7a-4166-ba8e-25c90914976c" class="">Removes any Improved Muscles</p><p id="b116d371-f9cc-4f19-9160-2344536740f4" class="">+DEX, +STR, -AP cost (relevant limb)</p><p id="12d054e9-ae3e-4be2-a377-8fdab6c382cd" class="">High-tech versions may have additional modification slots and/or armor</p></details></li></ul><p id="5a0cfb5e-8c39-4209-b8ca-95339dda2724" class="">Any arm replacements which don&#x27;t involve the full arm cannot benefit from cyberlimb STR increases</p></details></li></ul><ul id="89e42c6c-f637-4ed6-9257-d55baaa33e91" class="toggle"><li><details open=""><summary><em>Improved Muscles</em></summary><p id="c6cf397b-c8e3-4ab7-96b5-1e0d3531c797" class="block-color-yellow_background">Whether through drug use, genetic alteration, cybernetic augmentation, or some combination of the 3, it is possible to augment one&#x27;s muscles to become stronger, faster, or simply <em>swole</em>.</p><ul id="15187121-3c08-4112-8fab-5a7e91a56bf7" class="toggle"><li><details open=""><summary><strong>Effects</strong>:</summary><p id="31ce845a-f577-4734-a8bd-b886f54afda1" class="">Incompatible with Cyberlimbs</p><p id="0c14c73f-088f-420a-9c15-98764722cb59" class="">+STR, -AP cost (relevant limbs)</p></details></li></ul></details></li></ul><ul id="1b37fe40-e881-4cc7-af5f-06fcd5e19fee" class="toggle"><li><details open=""><summary><em>Magnetic Implants</em></summary><p id="7e598f20-a6fa-4023-81c4-875d52b4b303" class="block-color-yellow_background">In a world where floating out of reach of your spacecraft can mean death, some people opt to receive implanted electromagnets, so as to easily retain contact with the ship.</p><ul id="8915a510-82db-49d1-96f7-622da32487df" class="toggle"><li><details open=""><summary><strong>Effects</strong>:</summary><p id="a855f5fd-11ba-4bbe-8066-430ee241a01f" class="">Grants magnetic plates at a location of choice in your arms. These can be toggled on or off at will.</p><p id="03bcbe5c-3930-4340-b736-7251081a5dad" class="">Increased damage from magnet-based weaponry</p></details></li></ul></details></li></ul><ul id="fea7a066-3024-4808-8541-6b2661f31bf8" class="toggle"><li><details open=""><summary><em>Integrated Weapon</em></summary><p id="9351faf5-9f24-47c4-9452-e08d757ced1d" class="block-color-yellow_background">Instead of (or in addition to, sometimes) your hand, you have a gun!</p><ul id="d42250db-edd6-4ede-a4f6-d2f38129cdd3" class="toggle"><li><details open=""><summary><strong>Effects:</strong></summary><p id="f751c20e-9c3e-42b3-93b8-519697145baf" class="">Gain a weapon of the corresponding tier integrated into your arm.</p></details></li></ul></details></li></ul></details></li></ul><ul id="d84f3ec3-523a-435d-9ae3-83dc98422629" class="toggle"><li><details open=""><summary><strong>Leg Augmentations:</strong></summary><ul id="52235d73-5222-4ec1-aedb-e2e428053c8a" class="toggle"><li><details open=""><summary><em>Cyberlimbs</em></summary><p id="f3eaf4a3-a222-400f-bb1c-390add0481e0" class="block-color-yellow_background">The archetypal &quot;robot legs&quot;, cyberlimbs come in many varieties, from the simplest alpha or beta-level models to cutting-edge, corporate delta-tech. Regardless of complexity, they all fulfil the same basic purpose of replacing a human leg.</p><ul id="b85d0956-11df-44c7-9528-1cd293d0ca57" class="toggle"><li><details open=""><summary><strong>Effects</strong>:</summary><p id="64d6f12c-8284-411e-b4d4-5c585e947186" class="">Removes any Improved Muscles</p><p id="3d48fa8f-e3f1-4beb-b1f4-f5701ffd5f03" class="">+AGL, +MP</p><p id="671619c3-1528-484c-ad45-ebaffbb10846" class="">High-tech versions may have additional modification slots and/or armor</p></details></li></ul><p id="99922031-4ab0-4d91-b8b7-802582b0e3ec" class="">Any leg replacements which don&#x27;t involve the full leg cannot benefit from cyberlimb MP increases</p></details></li></ul><ul id="62d28d4d-ce8a-4ddc-9b18-27ed0a57abd7" class="toggle"><li><details open=""><summary><em>Improved Muscles</em></summary><p id="9673389a-5099-4286-8458-9bea201f8ecb" class="block-color-yellow_background">Whether through drug use, genetic alteration, cybernetic augmentation, or some combination of the 3, it is possible to augment one&#x27;s muscles to become stronger, faster, or simply <em>swole</em>.</p><ul id="0988fe1f-21dc-478c-8406-57cc2e4bc684" class="toggle"><li><details open=""><summary><strong>Effects</strong>:</summary><p id="0935559c-c9cc-4181-8a7b-08075b43e104" class="">Incompatible with Cyberlimbs</p><p id="ddcf3f8d-57be-459d-a896-49ca071b20c2" class="">+MP, +AGL</p></details></li></ul></details></li></ul><ul id="6bd9f44c-f962-412a-85b1-3417171cb2bf" class="toggle"><li><details open=""><summary><em>Magnetic Implants</em></summary><p id="1715da1d-a9e8-44a5-b31c-63b7af96bced" class="block-color-yellow_background">In a world where floating out of reach of your spacecraft can mean death, some people opt to receive implanted electromagnets, so as to easily retain contact with the ship.</p><ul id="60ff8269-9464-4db7-b843-37751cb743b7" class="toggle"><li><details open=""><summary><strong>Effects</strong>:</summary><p id="53ec7ff2-cc75-484c-ba59-a7e67884af00" class="">Grants magnetic plates at a location of choice in your legs. These can be toggled on or off at will.</p><p id="355c356c-e4e4-4ebf-8579-80e23f430305" class="">Increased damage from magnetism-based attacks.</p></details></li></ul></details></li></ul></details></li></ul><ul id="d1c2c97a-a34a-499d-ba6a-766074bb5932" class="toggle"><li><details open=""><summary><strong>Torso Augmentations</strong>:</summary><ul id="5956a89e-d104-4b20-a00c-58e3856d1f7b" class="toggle"><li><details open=""><summary><em>Improved Muscles</em></summary><p id="1e9ea86d-2c79-4d18-8281-8adb8e7bcf3a" class="block-color-yellow_background">Whether through drug use, genetic alteration, cybernetic augmentation, or some combination of the 3, it is possible to augment one&#x27;s muscles to become stronger, faster, or simply <em>swole</em>.</p><ul id="8bf5985f-77e7-47a3-898c-876c9b7960f6" class="toggle"><li><details open=""><summary><strong>Effects</strong>:</summary><p id="84d7aad4-45cb-444b-bc08-3201bcea909f" class="">+CON, +Armor, -Cascade</p></details></li></ul></details></li></ul><ul id="65a4ba4a-1dc5-4c49-9d5a-a1ca5b214a63" class="toggle"><li><details open=""><summary><em>Improved Organs</em></summary><ul id="d9d1fd7e-840c-4bfb-aaf1-866844a004e4" class="toggle"><li><details open=""><summary><em>Improved Heart</em></summary><ul id="c4e6901d-13c6-4f1e-ad8c-e6c89dc84377" class="toggle"><li><details open=""><summary><strong>Effects:</strong></summary><p id="a702c0cc-f9fd-4c7b-a90b-43d12d8d8108" class="">+MP, AP</p></details></li></ul></details></li></ul><ul id="9ec366e4-78dc-4a18-b002-161b969a7b61" class="toggle"><li><details open=""><summary><em>Improved Stomach</em></summary><ul id="eabae764-5bd0-4cde-94fe-ca34c14a02ce" class="toggle"><li><details open=""><summary><strong>Effects:</strong></summary><p id="4f383dc4-34bd-47a8-88b0-78af76bdaf91" class="">Ability to eat anything, repurpose indigestible materials</p></details></li></ul></details></li></ul><ul id="537ae4bd-d2a2-4d88-8831-e43a40efa1ad" class="toggle"><li><details open=""><summary><em>Improved Liver</em></summary><ul id="67b82ab1-2d49-4225-a1ce-d10efafbea87" class="toggle"><li><details open=""><summary><strong>Effects</strong>:</summary><p id="fe02bdd3-0ca4-4fe1-822c-1064312726ea" class="">Improved blood filtering, poisoning resistance</p></details></li></ul></details></li></ul><ul id="f4996860-4e1a-464f-bb03-4e8247734981" class="toggle"><li><details open=""><summary><em>Improved Kidney</em></summary><ul id="bfacf6e4-074a-4889-8ca2-4d89a0ac979f" class="toggle"><li><details open=""><summary><strong>Effects</strong>:</summary><p id="758c3b75-4624-424b-a5e8-99b4777e9a08" class="">Resistance to poison, reduction of need to drink</p></details></li></ul></details></li></ul></details></li></ul><ul id="591023d7-8358-4af7-956b-5d94a0474dc1" class="toggle"><li><details open=""><summary><em>Additional Organs</em></summary><ul id="6fa54f7b-1870-4e54-8a94-a19f2831315c" class="toggle"><li><details open=""><summary><em>Additional Heart</em></summary><p id="64a99c0a-9af3-44e6-ada4-9261fce80366" class="block-color-yellow_background">An additional heart implanted in the torso, allowing the body to more effectively pump blood, and acting as a backup in the event of catastrophic damage.</p><ul id="adf9011a-c5b9-4765-91a8-f6c4e98f022e" class="toggle"><li><details open=""><summary><strong>Effects</strong>:</summary><p id="2fcd33db-1452-4b6d-b4f8-ec530438a184" class="">+MP, +AP, -cascade, you can take more wounds to the torso before falling unconscious</p></details></li></ul></details></li></ul><ul id="d72939bd-caf9-458d-b9c8-42f64fb5b2f8" class="toggle"><li><details open=""><summary><em>Additional Lungs</em></summary><p id="eafc86a8-2cfb-4339-9051-dd0331e70101" class="block-color-yellow_background">Breathe more deeply with an extra set of functioning lungs</p><ul id="89e036a8-c898-4a3b-ad9b-1d3f23a4692b" class="toggle"><li><details open=""><summary><strong>Effects:</strong></summary><p id="27c63183-b7d4-451f-a128-cf174a84df65" class="">+AP, +MP, +ability to hold your breath</p></details></li></ul></details></li></ul><ul id="4d8da95b-b42b-4d44-9882-fcdd6a271f26" class="toggle"><li><details open=""><summary><em>New Organs</em></summary><p id="f6eb1825-dd84-4844-8f57-3dc98181f2c5" class="block-color-yellow_background">Modern technology allows for the creation and implantation of new and novel organs for a distressing variety of purposes.</p><ul id="68038023-1cfb-4f61-9289-d76c6ed2b55a" class="toggle"><li><details open=""><summary><em>Oxygen Storage</em></summary><p id="a25dc050-4c52-4366-bb3d-475afc392b3e" class="">+You can hold your breath for a long time</p></details></li></ul></details></li></ul></details></li></ul><ul id="1adfcdb4-6700-4cc0-821f-1651739ce336" class="toggle"><li><details open=""><summary><em>Chameleon Skin</em></summary><ul id="6ed62f1b-8e49-49ac-a8a4-828a1eb470bf" class="toggle"><li><details open=""><summary><strong>Effects</strong>:</summary><p id="dd7dc248-3e84-48cf-9286-4fb54a068ced" class="">Invisibility to various spectra of light</p></details></li></ul><p id="787ba707-d5f1-4bdb-bcd0-ccfe3169e3df" class="">Incompatible with Synthetic Skin</p></details></li></ul><ul id="b6d594f7-d0c3-4486-9616-ee7ebd66907c" class="toggle"><li><details open=""><summary><em>Synthetic Skin</em></summary><ul id="992557bc-9a32-454d-8a53-bde6e762e081" class="toggle"><li><details open=""><summary><strong>Effects</strong>:</summary><p id="74f6cb66-bd4f-4c2c-a5ac-220245c5ad9c" class="">Ability to change skin colour, +armour</p></details></li></ul><p id="ca01249c-3a35-4868-b85b-b67c816b8947" class="">Incompatible with Chameleon Skin</p></details></li></ul><ul id="b8257a31-d62c-48c3-8409-92d8d434ab74" class="toggle"><li><details open=""><summary><em>Augmented Skeleton</em></summary></details></li></ul></details></li></ul><ul id="2f09971b-5e69-4b75-a10c-ec05f38ddb70" class="toggle"><li><details open=""><summary><strong>Head Augmentations:</strong></summary><ul id="d9bfde42-e418-43f9-98d2-4f33da0ac08c" class="toggle"><li><details open=""><summary><em>Brain augmentation</em></summary><ul id="406c5f18-cbaa-4595-a7a8-9f177ba6cd0c" class="toggle"><li><details open=""><summary><em>Brain/Computer Interface</em></summary><p id="09c328b2-80ac-47ea-a903-321f0f7ca3b6" class="block-color-yellow_background">The base requirement for many cerebral augmentations, the BCI allows a direct link between higher brain functions and many computer systems.</p><ul id="0a47ad5f-3020-4a0f-b9a1-b9a89860e844" class="toggle"><li><details open=""><summary><strong>Effects:</strong></summary><p id="6880eeab-4220-4078-83c0-c2689b19b971" class="">+Computing if Computing is at least 1</p></details></li></ul></details></li></ul><ul id="c60be367-491a-4a32-9ef5-375fb989d522" class="toggle"><li><details open=""><summary><em>Blackbox</em></summary><p id="6c0695af-caa6-4110-be4e-088b4a6f1b4f" class="block-color-yellow_background">A miniaturised quantum storage device, capable of recording, storing, and retrieving the vast quantities of data generated by human memory.</p><ul id="62a29d25-5615-4558-bb43-e1979366f63d" class="toggle"><li><details open=""><summary><strong>Effects</strong>:</summary><p id="1c750b5e-0a00-4304-b302-efb5fcb2ebf6" class="">Gain perfect memory and recall. If you have a BCI, the memory can be exported to a quantum storage device or played on a connected display.</p></details></li></ul></details></li></ul><ul id="5ec04f4e-cb58-4acb-8ab0-ef052e95b55e" class="toggle"><li><details open=""><summary><em>Skill Implantation</em></summary><p id="479f9a0b-4705-4b10-a44e-e21af87283ed" class="block-color-yellow_background">Using the wonders of the BCI, you can gain skills by downloading them into your own brain. However, such data is often extremely tightly controlled.</p><ul id="3d26b71c-19ba-4539-95d8-988b9dc8e39a" class="toggle"><li><details open=""><summary><strong>Effects</strong>:</summary><p id="68ab3a6e-2466-4bd7-98e0-f5bd2a352b7f" class="">You can download skill levels (up to level 3) from quantum storage devices. If you have a blackbox as well, you can download skills up to level 5.</p></details></li></ul></details></li></ul><ul id="acb0630d-68d0-4467-b992-bc862dcfaea4" class="toggle"><li><details open=""><summary><em>Computer Cerebral Augmentation System</em></summary><p id="cf8dc1f7-1651-45d0-bfba-c880bbd02360" class="block-color-yellow_background">With sufficient cybernetic augmentation, it is possible to allow a sophisticated computer system to augment one&#x27;s own mind. Such is known as a Computer Cerebral Augmentation System, or CCAS</p><ul id="eeabb4d2-1282-4cc9-af30-1739a55a1d78" class="toggle"><li><details open=""><summary><strong>Effects</strong>:</summary><p id="20961f88-0820-44b2-88b6-b86f2bdd050f" class="">A sophisticated computer program (VI/AI) exists in your Blackbox, providing enhanced data processing capabilities in some fields.</p></details></li></ul><p id="87460ae8-da00-433a-9a46-dadbb386c762" class="">Requires a BCI and a Blackbox</p></details></li></ul><ul id="e25de4b0-f5c2-4fb0-89e3-cb51c97a3010" class="toggle"><li><details open=""><summary><em>Ghost Pilot</em></summary><p id="4c474d96-6675-4950-98cc-2b014abdb258" class="block-color-yellow_background">The &quot;Ghost Pilot&quot; system, as it&#x27;s known, is a procedure that allows a sophisticated computer program to take control of a human being&#x27;s conscious movements. Normally, this is installed in high-percent cyborgs, allowing them to react faster than the human eye can perceive. However, there are rumours that some sci-worlds have developed techniques that allow for individuals to be &quot;puppeted&quot; against their will. Sickening...</p><ul id="813cf595-ae4b-4af1-b011-f41b2a87f858" class="toggle"><li><details open=""><summary><strong>Effects</strong>:</summary><p id="fa3fe8ed-bdc0-466d-884a-31756fd93eb4" class="">When a reaction is triggered, gain AP until the end of the reaction.</p></details></li></ul><p id="bc6a8353-f7f3-40e7-98b5-55bfde027dff" class="">Requires CCAS. If attempting to puppet other individuals, requires at least a Delta-level CCAS and the relevant knowledge.</p></details></li></ul><ul id="8a152eb7-a74c-45eb-8d33-b7af74a4fe2b" class="toggle"><li><details open=""><summary><em>Integrated Antenna</em></summary><p id="bc889b40-d621-4d84-a8fd-ae6240943ae1" class="block-color-yellow_background">Though it may seem hilarious, the benefits of having a communications receiver in your head are numerous.</p><ul id="64fd6038-3bc9-4b50-b1d8-a572207a2cdd" class="toggle"><li><details open=""><summary><strong>Effects</strong>:</summary><p id="2980f386-8696-40ce-b4d1-6e608ac0396d" class="">You have an antenna implanted in your head. You can receive communications through it.</p><p id="e1f8636f-e6d0-474b-811d-5b04bf78d2d4" class="">If you have a CAS, you can attempt to intercept and decrypt wide-band communications.</p><p id="affc060c-68b4-4b63-93f5-12574631f6c3" class="">If you have Computing 3, you can use this as your hacking device, though it may be unwise.</p></details></li></ul></details></li></ul></details></li></ul><ul id="835a4598-87aa-43cf-8021-0958414988df" class="toggle"><li><details open=""><summary><em>Detachable Faces</em></summary><ul id="945ae7a8-70fe-4be5-adec-13b78e8423ef" class="toggle"><li><details open=""><summary><strong>Effects</strong>:</summary><p id="089401a3-f528-4667-be6f-8162b0c21f8f" class="">Ability to detach and swap out artificial faces, provided they have been created</p></details></li></ul><p id="e0db1e3e-cfa0-449f-933b-d26fdd118b8b" class="">Requires an artificial skull</p></details></li></ul><ul id="f8bd82e9-b396-4681-8022-104e07fd3075" class="toggle"><li><details open=""><summary><em>Augmented Eyes</em></summary><ul id="6b8401a1-561f-4ffd-906e-9bfcdbc121ad" class="toggle"><li><details open=""><summary><strong>Effects</strong>:</summary><p id="1512258f-4dd4-467d-ba13-1d9564487c8c" class="">+PER, +Observation, +Targeting</p></details></li></ul></details></li></ul><ul id="d0b11881-5115-4621-87bf-71ce3f4e82e7" class="toggle"><li><details open=""><summary><em>Throat Armour</em></summary><p id="61574ca3-3908-4f4e-a586-dde9559ef0c1" class="">Immunity to choking</p></details></li></ul><ul id="0c2ac988-ab1e-429e-ac2e-e55fc2245511" class="toggle"><li><details open=""><summary><em>Synthetic Skull</em></summary><ul id="e34a54b0-2d70-463a-9a2e-748a4125f85c" class="toggle"><li><details open=""><summary><strong>Effects</strong>:</summary><p id="d2069174-61f4-4b1b-a9a8-f55a438b66b5" class="">+Armor (Head)</p></details></li></ul></details></li></ul></details></li></ul><ul id="80e8a27f-e14a-414c-9e04-409e03410fcb" class="toggle"><li><details open=""><summary><strong>Other Augmentations:</strong></summary><ul id="7f3b2e41-1ad5-42e9-9d82-d91cf23a0df8" class="toggle"><li><details open=""><summary><em>Implanted Armor</em></summary><p id="39b83595-f2b8-4df5-9e5b-2346c31da105" class="block-color-yellow_background">Simple plates of thin armor implanted under the skin.</p><ul id="38334a45-9873-4af7-9e01-3523fed8b8cf" class="toggle"><li><details open=""><summary><strong>Effects:</strong></summary><p id="b3b3fdb0-d40a-4f6e-97a9-d8d276324a7b" class="">+Armor</p></details></li></ul></details></li></ul><ul id="7958e999-f5d9-49c0-a18b-d521de37f17d" class="toggle"><li><details open=""><summary><em>Implanted Gyroscopes</em></summary><p id="a010a50a-034d-4e1e-a17d-622fa1541511" class="block-color-yellow_background">Implanted gyroscopes in the limbs , when properly connected to the brain, assist in maintaining the body&#x27;s balance, especially with cybernetic limbs and cognitive computational enhancement.</p><ul id="e21e10fb-7f94-4f86-9365-47a8be4fadca" class="toggle"><li><details open=""><summary><strong>Effects</strong>:</summary><p id="a4617bb5-dfdf-4139-9cc8-9c625099b263" class="">Gain a stack of advantage on resisting knockdown effects.</p><p id="b7600387-b162-4101-8277-bada3ea433c6" class="">If you have cybernetic limbs, gain an additional stack of advantage.</p><p id="5242c7c7-15f3-474f-864b-b356dfcc485f" class="">If you have a CCAS, gain an additional stack of advantage</p></details></li></ul><p id="b65c1bd1-9e51-460a-bcc1-5be4549e5aa9" class="">Requires a BCI</p></details></li></ul><ul id="9d871654-b24c-4120-b483-b2aefc81684b" class="toggle"><li><details open=""><summary><em>Integrated Repair/Regeneration System</em></summary><p id="4d925ab1-682e-4cbc-bdc4-8c50e4fead4d" class="block-color-yellow_background">IRRS is a catch-all term for any system, biological or technological, that vastly increases the rate of human regeneration, whether for a time or permanently.</p><ul id="5c0478b8-87f3-449f-98aa-76f0b656acbf" class="toggle"><li><details open=""><summary><strong>Effects</strong>:</summary><p id="589a67ad-3a98-4b6b-818d-e757e6c45d82" class="">Reduce bleed-out rate, Regain health every turn (reduce incurred wounds)</p></details></li></ul></details></li></ul><ul id="e9d8622a-7a94-49cb-a6c4-ebbf32774006" class="toggle"><li><details open=""><summary><em>Symbiotes</em></summary><p id="202af1e8-d756-44c1-afea-c8335a69bae4" class="block-color-yellow_background">A symbiote is any kind of organism that attaches to or becomes part of the human body and provides it some sort of benefit in return for being sustained by the human.</p><ul id="7bd391e9-be16-4b32-99e6-7981a5248a73" class="toggle"><li><details open=""><summary>Resistance</summary><ul id="c0fc8f9f-f946-4417-a8cf-60df07aefa45" class="toggle"><li><details open=""><summary><strong>Effects</strong>:</summary><p id="c9b5dcac-a6f7-4a66-ae39-0b0484046458" class="">Whenever you would take a severe wound or less, don&#x27;t. Instead, note it down and take all the damage at once when the duration runs out.</p></details></li></ul></details></li></ul><ul id="a4ac0423-5969-4a48-a294-bf7057fed671" class="toggle"><li><details open=""><summary>Durability</summary><ul id="78ccc20f-6c3b-4dde-a088-cb0aa3cba73b" class="toggle"><li><details open=""><summary><strong>Effects</strong>:</summary><p id="640e5fa0-6b3f-4b41-b54d-7dcbb6764113" class="">Gain armor and lose MP for the duration</p></details></li></ul></details></li></ul><ul id="9bba3ff9-2d6c-43e6-b0b0-ead2398e5c11" class="toggle"><li><details open=""><summary>Rage</summary><ul id="e9a1e507-ad31-4483-a494-6e2edd502c76" class="toggle"><li><details open=""><summary><strong>Effects</strong>:</summary><p id="54b8e0b3-422b-41d5-bfba-7e8607c92b62" class="">+STR, +DEX, when this effect begins and ends, take 1d8 minor wounds (this damage cannot be reduced)</p></details></li></ul></details></li></ul><p id="4bb2d6a6-3760-410f-a428-a1933c3ac940" class="">+Cascade, when you bleed, take 1 extra minor wound.</p></details></li></ul></details></li></ul></div></article></body></html>

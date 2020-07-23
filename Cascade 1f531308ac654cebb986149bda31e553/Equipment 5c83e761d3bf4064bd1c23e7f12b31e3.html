@@ -1,0 +1,622 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Equipment</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="5c83e761-d3bf-4064-bd1c-23e7f12b31e3" class="page sans"><header><h1 class="page-title">Equipment</h1><table class="properties"><tbody><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M6.98643729,14.0000972 C5.19579566,14.0000972 3.40419152,13.3106896 2.04245843,11.9323606 C-0.681017475,9.21200555 -0.680780251,4.76029539 2.04293482,2.04012507 C4.76664406,-0.68004331 9.22427509,-0.68004331 11.9480135,2.04013479 C13.272481,3.36277455 14,5.1330091 14,6.99552762 C14,8.87640182 13.2721894,10.6285043 11.9480135,11.9509302 C10.5679344,13.3105924 8.77756503,14.0000972 6.98643729,14.0000972 Z M10.2705296,7.00913883 L10.2705296,8.46099754 L10.2705296,8.65543362 L10.076181,8.65543362 L8.6543739,8.65543362 L5.72059514,8.65543362 L5.52619796,8.65543362 L5.52619796,8.46099754 L5.52619796,5.52541044 L5.52619796,3.37946773 L5.52619796,3.18502193 L5.72059514,3.18502193 L7.17253164,3.18502193 L7.36692883,3.18502193 L7.36692883,3.37946773 L7.36692883,6.81467358 L10.076181,6.81467358 L10.2705296,6.81467358 L10.2705296,7.00913883 Z M12.1601539,6.99552762 C12.1601539,5.61697497 11.6190112,4.32597154 10.6393933,3.34769528 C8.63253764,1.34336744 5.35197452,1.34061603 3.34153136,3.33944106 C3.33868273,3.34219247 3.33607716,3.34494388 3.33322852,3.34769528 C1.32397148,5.35459953 1.32372842,8.63641682 3.33322852,10.6433794 C5.34295224,12.6504489 8.62968901,12.6504489 10.6393933,10.6433794 C11.6190112,9.66506426 12.1601539,8.37408027 12.1601539,6.99552762 Z"></path></svg></span>Created</th><td><time>@Dec 18, 2019 5:45 PM</time></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-red">Not Done</span><span class="selected-value select-value-color-green">Player</span><span class="selected-value select-value-color-pink">Rules</span></td></tr></tbody></table></header><div class="page-body"><ul id="b3fd1d9c-7f95-4e54-a9cf-c31ed4c66b14" class="toggle"><li><details open=""><summary><strong>Melee Weapons</strong></summary><figure id="e82a59de-fe95-4258-ae70-1074dfa63912" class="block-color-purple link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/Omnisword%20e82a59defe954258ae701074dfa63912.html">Omnisword</a></figure><figure id="73cd534f-dc5a-41ab-b55b-ca5c26eeb527" class="block-color-blue link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/Stun%20Stick%2073cd534fdc5a41abb55bca5c26eeb527.html">Stun Stick</a></figure><figure id="cdd54675-8473-4e9b-abff-39f4d7bab333" class="block-color-blue link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/Osmium%20Mace%20cdd5467584734e9babff39f4d7bab333.html">Osmium Mace</a></figure><figure id="9ad05edb-4c0c-4093-a2c7-458e13fbd000" class="block-color-gray link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/Titanium%20Knife%209ad05edb4c0c4093a2c7458e13fbd000.html">Titanium Knife</a></figure><figure id="56a91ec0-7ccd-4135-aa30-4f64694bacc3" class="block-color-gray link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/Titanium%20Sword%2056a91ec07ccd4135aa304f64694bacc3.html">Titanium Sword</a></figure></details></li></ul><ul id="1ae66df3-8da0-40e8-b3d8-e77a774fed24" class="toggle"><li><details open=""><summary><strong>Ranged Weapons</strong></summary><p id="f54b9c66-c514-4dc2-8bc8-f147c140b658" class=""><em>Key</em>: <mark class="highlight-gray">Alpha</mark>, <mark class="highlight-blue">Beta</mark>, <mark class="highlight-teal">Gamma</mark>, <mark class="highlight-purple">Delta</mark>, <mark class="highlight-orange">Echo</mark>, <mark class="highlight-red">Sigma</mark></p><figure id="b1a06b0a-7baf-478a-95a8-732c25109eb9" class="block-color-red link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/Graviton%20Projector%20Weapon%20b1a06b0a7baf478a95a8732c25109eb9.html">Graviton Projector Weapon</a></figure><figure id="abe638f2-272d-487b-83e2-16a1a2c85db7" class="block-color-purple link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/XN-1%20Collimated%20Neutron%20Beam%20Rifle%20abe638f2272d487b83e216a1a2c85db7.html">XN-1 Collimated Neutron Beam Rifle</a></figure><figure id="98abbc53-e8ad-4fe3-8525-dfa565ffa74f" class="block-color-teal link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/Martian%20SPW-2%20Rifle%2098abbc53e8ad4fe38525dfa565ffa74f.html">Martian SPW-2 Rifle</a></figure><figure id="ba9d2e31-13b4-45f4-b1a5-ee53e8786646" class="block-color-teal link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/JCW-5%20Anti-Mech%20Rifle%20ba9d2e3113b445f4b1a5ee53e8786646.html">JCW-5 Anti-Mech Rifle</a></figure><figure id="fae3976a-47ef-460a-894d-4a3a8f91dfce" class="block-color-teal link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/Snap%20Pistol%20fae3976a47ef460a894d4a3a8f91dfce.html">Snap Pistol</a></figure><figure id="61308063-e8e2-4986-b0f8-7ecb7f1da952" class="block-color-blue link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/EFA-12%20ARP%2061308063e8e24986b0f87ecb7f1da952.html">EFA-12 ARP</a></figure><figure id="2eaa30a4-e1cc-4e9c-8d07-61cf15629ad9" class="block-color-blue link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/JRW-51%20Anti-Personnel%20Railgun%202eaa30a4e1cc4e9c8d0761cf15629ad9.html">JRW-51 Anti-Personnel Railgun</a></figure><figure id="d1019119-237d-4757-bb6a-e7d35fe5e055" class="block-color-blue link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/JRW-53%20d1019119237d4757bb6ae7d35fe5e055.html">JRW-53</a></figure><figure id="9bd8b1b2-774d-48c7-842c-94bf110a9ad5" class="block-color-blue link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/NAFA%20Survivor%20Rifle%209bd8b1b2774d48c7842c94bf110a9ad5.html">NAFA Survivor Rifle</a></figure><figure id="6a8974d8-bd64-48c1-8da7-4d2c60fe55f5" class="block-color-blue link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/HK-53%20Terran%20Service%20Rifle%206a8974d8bd6448c18da74d2c60fe55f5.html">HK-53 Terran Service Rifle</a></figure><figure id="9e40c41b-9e37-41ba-982e-8f0fc78115a0" class="block-color-blue link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/NW-3%20Stun%20Pistol%209e40c41b9e3741ba982e8f0fc78115a0.html">NW-3 Stun Pistol</a></figure><figure id="e9e5e5fe-65a3-4773-855b-293f1012f0f7" class="block-color-blue link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/HMC-10%20Heavy%20Infantry%20Rifle%20e9e5e5fe65a34773855b293f1012f0f7.html">HMC-10 Heavy Infantry Rifle</a></figure><figure id="766c2151-d143-400c-a6d6-2a4331af68ac" class="block-color-gray link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/Repeating%20Rifle%20766c2151d143400ca6d62a4331af68ac.html">Repeating Rifle</a></figure><figure id="18734c3d-69e5-49d4-80be-f75ea7404e51" class="block-color-gray link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/Repeater%20Pistol%2018734c3d69e549d480bef75ea7404e51.html">Repeater Pistol</a></figure></details></li></ul><ul id="569ace9a-97be-4d92-8f3b-68fca4678ff9" class="toggle"><li><details open=""><summary>Special<strong> Weapons</strong></summary><figure id="16dbb59d-fc90-4363-90ff-b4832c13d284" class="link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/Smoke%20Grenade%2016dbb59dfc90436390ffb4832c13d284.html">Smoke Grenade</a></figure><figure id="f4e766dc-abae-4e9c-96d9-15717ed69364" class="block-color-red_background link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/Generic%20Rocket%20Launcher%20f4e766dcabae4e9c96d915717ed69364.html">Generic Rocket Launcher</a></figure></details></li></ul><ul id="6a520ab7-c8f2-486b-8600-9ed5a9536a5e" class="toggle"><li><details open=""><summary><strong>Apparel</strong></summary><figure id="eb8dfa1e-ca89-4555-9879-09c387bc3d3c" class="block-color-gray link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/Fashionable%20Clothing%20eb8dfa1eca894555987909c387bc3d3c.html">Fashionable Clothing</a></figure><figure id="2936d7a7-e74c-40c7-b20a-1f3f57d72daa" class="block-color-blue link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/TUFF%E2%84%A2%20Clothing%202936d7a7e74c40c7b20a1f3f57d72daa.html">TUFF™ Clothing</a></figure><figure id="8e3b0ded-0988-4f75-b3db-6dcf31b6fd7c" class="block-color-blue link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/EVA%20Suit%208e3b0ded09884f75b3db6dcf31b6fd7c.html">EVA Suit</a></figure><figure id="13494436-7f85-4a99-a2e1-bb5a1df4b98a" class="block-color-blue link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/Jovian%20Police%20Gear%20134944367f854a99a2e1bb5a1df4b98a.html">Jovian Police Gear</a></figure><figure id="148829fd-fa0f-4b7c-9c03-7700cf708602" class="block-color-blue link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/Security%20Jumpsuit%20148829fdfa0f4b7c9c037700cf708602.html">Security Jumpsuit</a></figure><figure id="e3fe12a9-955b-4295-a19e-7d77fd77f8dd" class="block-color-blue link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/Security%20Vest%20e3fe12a9955b4295a19e7d77fd77f8dd.html">Security Vest</a></figure><figure id="3ab481fd-86e2-433e-817c-a1f7e9f7db0b" class="block-color-teal link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/She%CC%80%20Marksman%20Suit%203ab481fd86e2433e817ca1f7e9f7db0b.html">Shè Marksman Suit</a></figure><figure id="456a3224-c57e-4ee0-ab95-05d462d8502d" class="block-color-gray link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/Megacity%20Riot%20Gear%20456a3224c57e4ee0ab9505d462d8502d.html">Megacity Riot Gear</a></figure><figure id="ae91bea5-6a8a-4e08-9938-761674a444f4" class="block-color-blue link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/Directorate%20Exo-Armor%20ae91bea56a8a4e089938761674a444f4.html">Directorate Exo-Armor</a></figure><figure id="d21acced-01b3-46e0-85b0-286a13d88c07" class="block-color-teal link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/Bhoot%20Suit%20d21acced01b346e085b0286a13d88c07.html">Bhoot Suit</a></figure><figure id="038e1374-2463-4002-901d-d5dba316a584" class="block-color-teal link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/Jovian%20Exine%20Armor%20038e137424634002901dd5dba316a584.html">Jovian Exine Armor</a></figure><figure id="93963545-8c60-49e8-8c10-2e5830e7f596" class="block-color-blue link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/Martian%20Exo-Suit%20939635458c6049e88c102e5830e7f596.html">Martian Exo-Suit</a></figure><figure id="ba7176d7-274c-492a-b515-e08f5c199ab8" class="block-color-teal link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/HMC%20Enforcer%20Armor%20ba7176d7274c492ab515e08f5c199ab8.html">HMC Enforcer Armor</a></figure><figure id="a48651c8-8e40-4650-96a0-6eb98048e004" class="block-color-teal link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/Directorate%20Shock%20Assault%20Armor%20a48651c88e40465096a06eb98048e004.html">Directorate Shock Assault Armor</a></figure><figure id="2ac40d7d-487a-4985-be68-38eb438f713e" class="block-color-teal link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/Terran%20Modern%20Combat%20Armour%202ac40d7d487a4985be6838eb438f713e.html">Terran Modern Combat Armour</a></figure><figure id="363dc6cb-995d-4d58-99ee-6ab34a92559c" class="block-color-purple link-to-page"><a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/Aphetor%20Armor%20363dc6cb995d4d5899ee6ab34a92559c.html">Aphetor Armor</a></figure></details></li></ul><ul id="3127ffb7-b904-473b-9659-7bb08b19009b" class="toggle"><li><details open=""><summary><strong>Attachments</strong></summary><ul id="0e0b015c-1a3d-4fe5-896c-94377b24c626" class="toggle"><li><details open=""><summary><strong>Charge Module</strong></summary><p id="33458d3d-9290-4530-adf5-341e3478aec0" class=""><em>Armor Attachment</em></p><p id="b3e75438-acb9-410c-ab79-be664bc85d06" class=""><em>Effects</em>:<div class="indented"><p id="29ba8b22-b839-4fb0-9f71-d4031a31c808" class="">Must be equipped on power armor</p><p id="3172d82a-a2a1-4887-8f6d-729970d76f32" class="">Allows the user to charge 10m in a straight line at a cost of 5MP and 5CP.</p><p id="756a3ad6-4415-44e4-a6fc-e33c2b0039e6" class="">Anything in front of you will be carried with you.</p><p id="7f346536-b675-4942-9ff0-821fd0f6a11f" class="">If you hit a wall, the charge ends. Any enemies caught between you and the wall take a major wound of damage to all body parts.</p></div></p></details></li></ul><ul id="12cafd2f-c449-4987-8a0c-7b928b54598e" class="toggle"><li><details open=""><summary><strong>Quick-loading Stock</strong></summary><p id="a864454f-ea33-4513-af21-7f511b1fe38b" class=""><em>Weapon Attachment</em></p><p id="e7274a97-253d-4bf4-b21a-8153b013bc7f" class=""><em>Effects</em>:<div class="indented"><p id="03144dc5-fb94-4640-8ac7-bd332ac46343" class="">Reloading costs 1 less CP</p><p id="3166c98f-e278-480d-a80d-a8e4e053c1da" class="">Incompatible with other Stock attachments</p></div></p></details></li></ul><ul id="3afc6396-75d5-4d9c-bcaa-7013934187c8" class="toggle"><li><details open=""><summary><strong>Recoil-Dampening Stock</strong></summary><p id="b7d938b2-933f-4c77-b2f4-bb0541e40bd8" class=""><em>Weapon Attachment</em></p><p id="9d58aa9e-738c-46ce-8867-78b50afa8162" class=""><em>Effects</em>:<div class="indented"><p id="5cca1aed-047e-4999-abe0-1503619335b9" class="">Steadying removes an additional stack of kickback</p></div></p></details></li></ul><ul id="b6780a7d-c42b-4fe7-bd57-2ff21d7cf897" class="toggle"><li><details open=""><summary><strong>Infrared Optics</strong></summary><p id="5beb62d2-d9e3-4c3d-ad46-16e8bd71efd7" class=""><em>Armor</em>/<em>Weapon Attachment</em></p><p id="78fe9904-7d95-4a99-9077-6048268f2296" class=""><em>Effects</em>:<div class="indented"><p id="76103144-1874-49f0-a693-b117742bc52d" class="">Allows you to detect heat sources</p><p id="c1017520-6eb1-4428-a3e3-b3bc9c1abba0" class="">Eliminates disadvantage for firing through smoke or in darkness</p></div></p></details></li></ul><ul id="9047f2ce-0f53-4415-bc91-85fccbde60fb" class="toggle"><li><details open=""><summary><strong>Integrated AutoDoc</strong></summary><p id="caeb7bf2-dc5c-45d7-aed5-ff83aae03c36" class=""><em>Armor/Limb Attachment</em></p><p id="90a01631-8b00-4231-8563-004c85f0ff2c" class=""><em>Effects</em>:<div class="indented"><p id="ca35962e-4d08-45d8-8ab6-1dfb79bed0fd" class="">Whenever you would take bleeding or cascading damage, this attachment eliminates it for this limb, as long as the attachment is charged.</p><p id="9a928233-8310-45d7-950c-144472e29ff4" class="">Can hold up to 5 charges</p><p id="5cf2ec6a-0e4b-480d-a4eb-635c682fdbbd" class="">1 charge stops 1 instance of bleeding or cascading damage</p><p id="5fff13fd-20a9-4025-a2a9-ba0825501f10" class="">Can be recharged with any medical mechanite supply</p></div></p></details></li></ul><ul id="0faddd93-b392-45ae-bf78-d8f980772a2c" class="toggle"><li><details open=""><summary><strong>Bayonet</strong></summary><p id="3f3985f0-9e20-4411-a19d-b9bbdeff1cf5" class=""><em>Weapon Attachment</em></p><p id="f238fad7-b9f9-49c9-b0c5-50621064c568" class=""><em>Effects</em>:<div class="indented"><p id="77c4bd0d-7879-4165-914e-fa1dc638e4d0" class="">You have a knife attached to the front of your gun. By default, this knife has the stats of a <a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/Titanium%20Sword%2056a91ec07ccd4135aa304f64694bacc3.html">Titanium Sword</a>, but it can be swapped out at will.</p><p id="4d0b2c3c-41cf-4cc4-81ab-c2692abc0f02" class="">The knife may be removed for 5MP, at which point it functions like a normal melee weapon</p></div></p></details></li></ul><ul id="c160cba9-838e-4152-9504-058b181624b5" class="toggle"><li><details open=""><summary><strong>Night Vision Optics</strong></summary><p id="27816a9c-28f7-44d6-bf76-7ac910465587" class=""><em>Armor</em>/<em>Weapon Attachment</em></p><p id="cc54adde-734f-44b0-bc2e-2f18164f2e87" class=""><em>Effects</em>:<div class="indented"><p id="adc5fc60-8246-451d-9fc8-f3ff8bd906a2" class="">Negates disadvantage on any attacks made from darkness, gain a stack of disadvantage if used in normal light.</p><p id="18b2d4ea-e318-47c4-b025-5bcdc1c4d070" class="">Can be deactivated at will</p></div></p></details></li></ul><ul id="853a4bb0-ed7f-4cfb-b2f6-a01a15cc471b" class="toggle"><li><details open=""><summary><strong>Flashlight</strong></summary><p id="64ba54fb-f06f-4466-9a03-2435ff6bf695" class=""><em>Armor</em>/<em>Weapon Attachment</em></p><p id="340de5b9-ea7c-4b47-9818-3527107ed1a1" class=""><em>Effects</em>:<div class="indented"><p id="a2853724-a39d-41ff-8095-45855047e4d4" class="">Projects a cone of bright light out to 10m, and dim light another 10m beyond that</p><p id="5dd781be-c047-400b-8d38-f9eae17bb19f" class="">Enemies which come within 2m are blinded, and suffer a stack of disadvantage on any attacks</p></div></p></details></li></ul><ul id="6adbc8c8-1b2f-4297-bc6e-97100213c10c" class="toggle"><li><details open=""><summary><strong>Angled Grip</strong></summary><p id="8e9a77b5-c521-44ff-a65e-f75f4d4e322b" class=""><em>Weapon Attachment</em></p><p id="388ab90e-528c-45a9-b5be-b3e0f78b9338" class=""><em>Effects</em>:<div class="indented"><p id="42d3cf3b-aa61-46c0-8a9a-6ba1f0823263" class="">+1 stack of kickback removed</p></div></p></details></li></ul><ul id="1d0cd033-1e7c-4f4c-91f3-d4698633f5ef" class="toggle"><li><details open=""><summary><strong>Scope</strong></summary><p id="21bd5352-fa71-43a6-9a93-7a45e64aa11e" class=""><em>Weapon Attachment</em></p><p id="4badb646-9a82-4118-8caa-8479fe890dd3" class=""><em>Effects</em>:<div class="indented"><p id="dccf9e6a-2866-4ccc-8e84-02be6652dc02" class="">+1 to hit</p></div></p></details></li></ul><ul id="e3458fde-ad67-4226-8673-0580ec7b6c8f" class="toggle"><li><details open=""><summary><strong>Weapon Stalk</strong></summary><p id="628244b3-8ae4-4ffe-a1d0-807f994bc043" class=""><em>Armor Attachment</em></p><p id="15ad8aa3-42ce-4569-b92d-199588614043" class=""><em>Effects</em>:<div class="indented"><p id="8f4a2108-b0ca-446d-9f86-46691a67ebc2" class="">Pick a ranged weapon. This weapon is attached to your armor by a gimballed, double-jointed arm. You may make attacks with this weapon for 5CP. This weapon does not benefit from bonuses to hit and cannot aim, but does not suffer from recoil and can fire in any direction.</p></div></p></details></li></ul><ul id="2f61cd56-b611-4da5-a3df-3913b286d385" class="toggle"><li><details open=""><summary><strong>Thrusterpack</strong></summary><p id="e1591cde-35b1-46ce-8335-e858cf027f5b" class=""><em>Armor/Limb Attachment</em></p><p id="f15a60d3-d110-44d4-b52d-e004b2b8d37f" class=""><em>Effects</em>:<div class="indented"><p id="2c257161-634d-47ee-9a6c-ae3b770c0e74" class="">You gain the ability to jump up to 5m in the air (stacks up to 25m with multiple thrusterpacks) at a cost of 7MP. You take no fall damage from these jumps.</p><p id="d79df78a-c007-491a-98cb-19d30dcdb2ea" class="">Must be attached to the torso or symmetrically on limbs.</p></div></p></details></li></ul><ul id="c582a6bc-3dba-4141-85cc-ed86598f23a0" class="toggle"><li><details open=""><summary><strong>Jetpack</strong></summary><p id="da5388fe-362e-45d0-a423-433b0d136a25" class=""><em>Armor Attachment</em></p><p id="3ddbaf2c-db79-4b72-a331-b72c8c8b460a" class=""><em>Effects</em>:<div class="indented"><p id="3137b772-03f7-431a-9978-0bfb9ea38d75" class="">You may hover up to 10m in the air for up to 30s and move at double MP cost. As long as you have not expended all of your fuel, you may choose to not take fall damage, at the cost of 1s of fuel. At the end of the duration, if you are still in the air, you quickly but gently fall up to 10m, negating any fall damage. If you fall further than this without fuel, you take fall damage as normal.</p><p id="297a5270-9543-4a42-a3ef-d045eed59a8f" class="">Must be attached to the torso.</p></div></p></details></li></ul><ul id="b4cf2f4d-dcb0-44a8-85bf-ea309a4e13e2" class="toggle"><li><details open=""><summary><strong>Polyceramic Plating</strong></summary><p id="e6de61af-1e9f-487e-8236-287edf487d55" class=""><em>Armor/Limb Attachment</em></p><p id="e8278f60-2997-4cbb-9cc3-d8677633bc2b" class=""><em>Effects</em>:<div class="indented"><p id="6a49983a-1fc8-489b-b22c-986ba22ee30d" class="">+1 armor</p><p id="b04d5bff-9daf-47ea-8e73-6e7f4c6b70d5" class="">-5 MP</p></div></p></details></li></ul><ul id="32772cb4-7721-4e7b-8106-7f139d84498c" class="toggle"><li><details open=""><summary><strong>Mantis Blade</strong></summary><p id="91920e19-d440-45a9-97a0-f1c9a817f385" class=""><em>Armor Attachment</em></p><p id="ed6b0e28-ebed-4422-8230-5423309fccc9" class=""><em>Effects</em>:<div class="indented"><p id="e189b67a-a51b-4a0c-b990-de9eebfbba0c" class="">You have a 3-jointed blade attached to your armor at a point of your choice. This blade has the stats of a <a href="Equipment%205c83e761d3bf4064bd1c23e7f12b31e3/Titanium%20Sword%2056a91ec07ccd4135aa304f64694bacc3.html">Titanium Sword</a> by default, but can be upgraded.</p></div></p></details></li></ul><ul id="57b290c0-be05-4a0d-ade9-fba72d7cb97b" class="toggle"><li><details open=""><summary><strong>Large Integrated Air Supply</strong></summary><p id="c1e9398b-a066-4620-91ae-c3c362b3cda7" class=""><em>Armor</em></p><p id="9ea39512-4a75-40a2-90c1-b15419e3fe1e" class=""><em>Effects</em>:<div class="indented"><p id="d782e282-efa9-4b17-a4fb-a55b366c46ea" class="">+48 hours of self-contained air supply</p><p id="7ba5eed0-f86d-4c3c-b3b0-ba9449cb9018" class="">-1 Armor</p><p id="c6f8c0ed-56f9-41d2-a9bc-47fd8460986a" class="">-5MP</p></div></p></details></li></ul><ul id="87836a93-bfcb-49d2-9cd1-545f0625f75c" class="toggle"><li><details open=""><summary><strong>Integrated Air Supply</strong></summary><p id="5ae840c2-030c-4bf4-8d03-276eaf37a715" class=""><em>Armor Attachment</em></p><p id="caa8a44f-a497-4c26-9bd3-cac43cc91771" class=""><em>Effects</em>:<div class="indented"><p id="9b1d5d43-4e30-43e9-a754-4da80b95796c" class="">+16 hours of self-contained air supply</p></div></p></details></li></ul></details></li></ul><ul id="19a5ea03-9051-4bd0-ace0-6a22d72b4dd8" class="toggle"><li><details open=""><summary><strong>Augmentations</strong></summary><p id="9e1df1d4-6152-4efa-a074-f3078aa0f416" class=""><a href="Augmentation%2049a90f0595eb435ca3041fde8a137901.html">Augmentation</a> </p></details></li></ul><ul id="bd635349-4178-41fc-8c66-6623e6b443a6" class="toggle"><li><details open=""><summary><strong>Miscellaneous Items</strong></summary><ul id="4b8fd38a-fb2d-4ba8-bf60-580e72a37015" class="toggle"><li><details open=""><summary><strong>Nanoapplicator</strong></summary><p id="2f100eda-752a-478d-99ca-7991927f1893" class="">Heals <strong>1d4</strong> minor wounds</p><p id="61096d54-bd9a-4051-b131-7d636e78ed27" class="">2 uses</p><p id="7245f036-0460-499e-b197-ed552ae4b247" class="">5CP to use</p><p id="6f856d06-eae6-47c3-8245-2dded03872bc" class="block-color-yellow_background">A cutting-edge medical mechanite infuser. Apply to limb and press button.</p></details></li></ul><ul id="6f46b505-455c-4d40-a9ae-87dd841d9a77" class="toggle"><li><details open=""><summary><strong>Advanced First-Aid Kit</strong></summary><p id="e95fda1f-7f0a-40f4-ac72-4f303a3c7def" class="">Heals <strong>1d6</strong> minor wounds</p><p id="d26e1360-ce85-460a-8bb3-3a045fe04710" class="">Stops bleeding</p><p id="705d495b-b185-4473-b696-891c513a5709" class="">Neutralises common poisons</p><p id="9a0392f8-d940-41ba-8b4d-8efe7baa5599" class="">10 uses</p><p id="30e8201e-3c9e-4081-94a4-67bd8b4ff630" class="">15CP to use</p><p id="13463c87-009a-437b-8209-dc161f357bcc" class="block-color-yellow_background">A modern first-aid kit with diagnostic assistance and clotting spray</p></details></li></ul><ul id="19cd13f3-70e2-4c35-b0e4-d7e9b57915e9" class="toggle"><li><details open=""><summary><strong>Field First-Aid Kit</strong></summary><p id="8cfc24f9-72a9-41e4-8341-0c53c9e019fc" class="">Heals <strong>1d4</strong> minor wounds</p><p id="503fedc5-7695-48ad-88d5-b3db5b7cd6da" class="">Stops bleeding</p><p id="7590bc6c-e75f-44e7-872b-22754975662e" class="">5 uses</p><p id="9546c8fb-f12d-49db-b0e1-97fff7bd1423" class="">15CP to use</p><p id="dd557f7a-e6df-44ff-aa61-46376928e6b0" class="block-color-yellow_background">A standard first-aid kit, largely unchanged over the last several centuries. Antibiotics, antivirals, antifungals, and something to wrap wounds.</p></details></li></ul></details></li></ul></div></article></body></html>

@@ -1,0 +1,708 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Skills</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="85447b21-0bcb-4320-99c0-329dfe780662" class="page sans"><header><h1 class="page-title">Skills</h1><table class="properties"><tbody><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M6.98643729,14.0000972 C5.19579566,14.0000972 3.40419152,13.3106896 2.04245843,11.9323606 C-0.681017475,9.21200555 -0.680780251,4.76029539 2.04293482,2.04012507 C4.76664406,-0.68004331 9.22427509,-0.68004331 11.9480135,2.04013479 C13.272481,3.36277455 14,5.1330091 14,6.99552762 C14,8.87640182 13.2721894,10.6285043 11.9480135,11.9509302 C10.5679344,13.3105924 8.77756503,14.0000972 6.98643729,14.0000972 Z M10.2705296,7.00913883 L10.2705296,8.46099754 L10.2705296,8.65543362 L10.076181,8.65543362 L8.6543739,8.65543362 L5.72059514,8.65543362 L5.52619796,8.65543362 L5.52619796,8.46099754 L5.52619796,5.52541044 L5.52619796,3.37946773 L5.52619796,3.18502193 L5.72059514,3.18502193 L7.17253164,3.18502193 L7.36692883,3.18502193 L7.36692883,3.37946773 L7.36692883,6.81467358 L10.076181,6.81467358 L10.2705296,6.81467358 L10.2705296,7.00913883 Z M12.1601539,6.99552762 C12.1601539,5.61697497 11.6190112,4.32597154 10.6393933,3.34769528 C8.63253764,1.34336744 5.35197452,1.34061603 3.34153136,3.33944106 C3.33868273,3.34219247 3.33607716,3.34494388 3.33322852,3.34769528 C1.32397148,5.35459953 1.32372842,8.63641682 3.33322852,10.6433794 C5.34295224,12.6504489 8.62968901,12.6504489 10.6393933,10.6433794 C11.6190112,9.66506426 12.1601539,8.37408027 12.1601539,6.99552762 Z"></path></svg></span>Created</th><td><time>@Mar 11, 2020 3:50 PM</time></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-yellow">Needs Review</span><span class="selected-value select-value-color-green">Player</span><span class="selected-value select-value-color-pink">Rules</span></td></tr></tbody></table></header><div class="page-body"><p id="0ca193d3-a4d2-4d6d-8ff6-b58ca581d423" class="">
+</p><p id="4a044b5c-5c68-4aec-a32f-c6a204bde623" class=""><strong>Stats</strong></p><p id="c37d7f5e-5a33-40be-876d-26111c19e4d5" class=""><em>Strength</em> - Determines how brawny you are</p><p id="e577c915-64a2-4efc-ac33-dd94609c6fa2" class=""><em>Constitution</em> - Determines how hardy you are</p><p id="286d506e-2b7a-4ff4-9643-d0c90bc5cd62" class=""><em>Agility</em> - Determines how fast you are</p><p id="4bff66ec-c2fe-4fb5-8198-d7881966a3a7" class=""><em>Dexterity</em> - Determines how fast your reflexes are</p><p id="9f7d024d-59cf-4ec7-8304-a150ff6965f7" class=""><em>Perception</em> - Determines how observant you are</p><p id="85b044b5-8631-4cc3-88db-7aa118253059" class="">Charisma - Determines how suave you are</p><p id="b1eafa2f-08d5-4e6e-9341-3091a5100e3f" class=""><em>Intelligence</em> - Determines how well you learn and how much you know</p><p id="b59c4d16-92d3-49d0-b377-1a01212ab0c3" class="">
+</p><p id="bde15a4e-8889-48f3-a9ab-45c7a493d954" class=""><strong>Abilities:</strong></p><p id="6f4853f7-c8d7-4d68-804d-1391b80686ff" class=""><em>Combat Training</em><div class="indented"><p id="5e3f72d4-cdc9-443c-b2f2-8d19788485d2" class="">Requirements: None</p><p id="9e7ad122-091d-4929-a2a2-98ee8413ba01" class="">Gain +5 CP.</p><p id="2ce8035d-31bc-47bc-8cd0-a4d771f3c5d7" class="">This skill may be taken more than once.</p><p id="a334af91-aa4c-4f0f-9407-9f99d936c530" class="">
+</p></div></p><p id="76225449-a6de-460b-a256-2e019f102581" class=""><em>Endurance Training</em><div class="indented"><p id="971b366e-7c4b-45d3-8e54-410e786cd3e8" class="">Requirements: None</p><p id="727254a6-76f5-41ca-b4b3-cbc06f54f832" class="">Gain +5 MP.</p><p id="48bb7196-2d07-412e-967b-903fabe05b62" class="">This skill may be taken more than once.</p><p id="ef219ba3-476f-4d53-a032-de2ea014b083" class="">
+</p></div></p><p id="343dbb2b-d7f1-4634-b725-65ebc8bf0a4e" class=""><em>Specialist Training</em><div class="indented"><p id="59202791-0fdd-4057-bd03-d6ab1a950b7d" class="">Requirements: None</p><p id="d831eada-ee86-47fc-8781-5dfce3c8da6a" class="">Gain +3 AP.</p><p id="81018e70-5d1e-4885-9803-e34ec358571d" class="">This skill may be taken more than once.</p><p id="72e82360-a86b-4a17-bfdc-d32e960bbbbb" class="">
+</p></div></p><p id="dbded956-a3b3-4a44-945f-e39b36bc9d2c" class=""><em>Pistol Training</em><div class="indented"><p id="78cd1d79-ad34-4092-bcd7-33454593a37b" class="">Requirements: None</p><p id="8480ee24-c71d-41aa-b284-8af3742c96d8" class="">You can use pistols without any downsides</p><p id="257711ef-754b-4a7c-977d-de6e81e57739" class="">
+</p></div></p><p id="6d4a74c5-5912-4fab-bc73-67d66dde06a7" class=""><em>Rifle Training</em><div class="indented"><p id="6db33d8e-cf5c-4bc3-b31d-636ffe1bf5ad" class="">Requirements: None</p><p id="404399f4-ba8c-4ec1-b1eb-10a491bca6d7" class="">You can use rifles without any downsides</p></div></p><p id="bb62dbab-02b4-4dff-957a-4e796ad924fa" class="">
+</p><p id="e1adea10-c7da-49d9-adf7-a24c85ac3f43" class=""><em>Melee Training</em><div class="indented"><p id="d4bca2c4-6d57-4000-9781-d588d374b2c0" class="">Requirements: None</p><p id="ee0248c7-3d4e-43d8-8028-3bcdb8fba3f0" class="">You can use melee weapons without any downsides</p><p id="975578d2-e758-45a3-8578-8cb67db384c4" class="">
+</p></div></p><p id="273ee763-874a-4372-af88-cbf7e28c6c20" class=""><em>Special Training</em><div class="indented"><p id="2ced1be2-fe43-4cc0-8811-9a813ddf8102" class="">Requirements: None</p><p id="43c03aae-d39b-4b0d-bb84-a72175b02b74" class="">You can use special weapons without any downsides</p></div></p><p id="d43a110c-6616-43e0-b25b-33f1a7dc44f8" class="">
+</p><p id="ae201a13-21d3-4d10-8977-38ffbe556dcd" class="">[!]<em>Handful of Pain</em><div class="indented"><p id="460e9d34-c64a-428d-98cd-3364dc224267" class="">Requirements: 5 AGL &amp;&amp; 5 DEX</p><p id="72537d4e-f6ab-4952-b25a-9bc8c0e59fce" class="">You may throw 2 items at once at the same target for the same CP as a normal throwing attack.</p><p id="b22ee169-1c45-4756-8011-7d2a2d7a6547" class="">+3 CP</p></div></p><p id="416534b3-696e-4fc1-8bad-44f4439cddbb" class="">
+</p><p id="64488862-a500-487f-8372-d96f127d89d4" class="">[!]<em>Mobile Grappler</em><div class="indented"><p id="7ed8783b-fae3-4910-9943-4e355c60c697" class="">Requirements: 6 STR</p><p id="6e4af032-0575-4f9e-ab36-4d1a601c6c82" class="">While restraining someone, you may move with them at double MP cost.</p><p id="c7489192-32ed-4634-bccc-4d01047f1ce0" class="">
+</p></div></p><p id="634e19b5-7eae-4945-9a7a-2a474f6ea68c" class=""><em>Improved Disarm</em><div class="indented"><p id="ac78b22f-1138-4450-bab8-98fe1643348b" class="">Requirements: 5 STR</p><p id="29a8d140-d5a2-47cd-a63d-b651b90977f9" class="">On a successful grapple, you may chose to disarm your target instead of restraining them. If you do so, their weapon is thrown 1d4 metres away, in a direction of your choice.</p><p id="e4c84717-bca2-4bee-ba63-a92da954c8f4" class="">
+</p></div></p><p id="0be1cabc-193c-493b-95ab-119bf9f8d73e" class=""><em>Disarm Mastery</em><div class="indented"><p id="16e53b9a-1e19-46dd-b65b-98914ee2d178" class="">Requirements: 6 STR &amp;&amp; Improved Disarm</p><p id="222a18e1-a236-4f3c-83c6-ae962c7bf1f1" class="">When you successfully disarm someone, you may choose to use their weapon instead of throwing it away, provided you are capable of wielding it.</p><p id="e7bca4c9-27b1-4b4c-b7c0-8e0d5be00671" class="">
+</p></div></p><p id="02e102e2-085e-4f9e-8e00-46e592ab1444" class="">[!]<em>Snip-snap!</em><div class="indented"><p id="9e81165a-a977-47cb-af20-f5e2744756e8" class="">Requirements: 7 STR</p><p id="6f3d06d6-18ac-42fb-be8a-b7a64bf9c60f" class="">While restraining an target, you may attempt a melee attack with a stack of advantage at a cost of 10CP. If successful, they take no damage, and you may cripple a restrained target&#x27;s limb (except for the head or torso).</p><p id="a033f6ce-23f3-4fb8-9b53-fd27b6b74ee4" class="">
+</p></div></p><p id="31214236-6250-47f5-837a-a5e07fc59aa0" class="">[!]<em>Black-bag</em><div class="indented"><p id="9c7dac88-b1a2-4e40-8190-603bdf7192ff" class="">Requirements: 6 DEX</p><p id="e0a6175b-219d-4786-a508-f76e9337f3db" class="">While in stealth, you may instantly restrain a target within grappling range at normal CP cost.</p><p id="2809e663-ba84-4495-976e-aa8e3c0c92bb" class="">
+</p></div></p><p id="dda32889-54c9-4a5a-9839-2f65776bed5f" class=""><em>Nothing but Dreams...</em><div class="indented"><p id="4a554132-cbef-4b4b-b43b-71d22aedc15a" class="">Requirements: 7 DEX &amp;&amp; 7 STR &amp;&amp; Black-bag &amp;&amp; Snip-snap!</p><p id="caf4e2b4-95f6-484d-ab6e-1a907d9ac3ef" class="">While restraining a target, you may attempt a melee attack on the target&#x27;s head. If successful, they take no damage, but their head is crippled.</p><p id="a4423e36-3f27-42ca-b2e3-8ef86ece27b1" class="">
+</p></div></p><p id="ce594b7e-7d21-436b-bb1c-cb1075abbe9a" class=""><em>Controlling Grapple</em><div class="indented"><p id="3aed96af-8541-4e3b-8d60-f4ab7d2bfcbe" class="">Requirements: Disarm Mastery, Mobile Grappler</p><p id="f35b29f5-5cf4-4278-89b0-cc2558d1df32" class="">While restraining a target, they always take their turn after you in the initiative order. When they are released, they return to their previous place in the initiative order. Additionally, when you successfully restrain a target, you may knock them prone instead of restraining them.</p></div></p><p id="ed495813-0a2e-4295-8275-a8abf0f2dc64" class="">
+</p><p id="73f04f10-c075-46ce-a257-f0700bc3b2e6" class="">[!]<em>Try Again </em><div class="indented"><p id="f91255ff-78d0-4746-b905-9a594d55ce27" class="">Requirements: AGL 3 &amp;&amp; DEX 3</p><p id="812e5262-596c-4686-8d75-92b0a64523db" class="">You may parry counterattacks.</p><p id="115ab006-bf33-43e3-b83a-c66f10bd39fe" class="">
+</p></div></p><p id="60a38654-a76e-4688-babf-3e7c259b0923" class=""><em>Off-hand Training</em><div class="indented"><p id="2c1307bb-9ae3-4a02-8f71-2623a0749961" class="">Requirements: AGL 3</p><p id="43ec76b7-ab9b-4696-afa9-8b98d8f580cd" class="">You may make unarmed attacks while wielding a melee weapon in your other hand.</p><p id="67298e23-e0f9-4256-9335-e0d4c5721f42" class="">
+</p></div></p><p id="9748ece5-2b5f-40a9-aeb9-404a4b419d19" class=""><em>Sucker Punch</em><div class="indented"><p id="bf126eac-3d17-44db-a0db-92daeefefc3d" class="">Requirements: Off-hand Training</p><p id="13333bf3-bc48-4c57-9b05-2b1f619bc8b1" class="">If an opponent successfully blocks one of your melee attacks, you may immediately follow up with an unarmed attack of 50% CP cost.</p><p id="211ed26a-e9ed-4c69-8218-26de5af597ea" class="">
+</p></div></p><p id="cea57c4d-e272-43f6-9d27-8b21db7fe6ad" class=""><em>Killing Blow</em><div class="indented"><p id="a91becc3-0fe8-4f9c-8a4a-4a75dac38535" class="">Requirements: DEX 7</p><p id="203271d9-9312-42c1-bd30-1f86fef5eeca" class="">Attempt a melee attack at triple CP cost. If it succeeds, the attack ignores all armor.</p><p id="ed6edecb-9b7e-4060-9352-2ae3d4616259" class="">
+</p></div></p><p id="ce018744-fc20-4baa-8ef9-8791c07ecc98" class=""><em>Coup de Grace</em><div class="indented"><p id="7c15bd38-f442-4116-90c3-719643254aff" class="">Requirements: Killing Blow</p><p id="353e4203-0f75-4464-869c-d98772871765" class="">Spend all of your AP, along with your remaining MP and CP to make an attack that deals 2 lethal wounds to a target. You must have at least 5 MP and CP to use this attack.</p><p id="5c5addd8-92bb-4c48-ba2b-329a9daa9030" class="">
+</p></div></p><p id="6f593394-3115-4b70-a894-4d3e03736d97" class=""><em>Good Try</em><div class="indented"><p id="d391e192-2a5e-4ee3-a783-e9a37f85f712" class="">Requirements: Take-back, Try Again, STR 6</p><p id="6c7d5d53-eb3d-4d96-a679-6b2c09ec91af" class="">When you successfully parry an opponent, instead of counterattacking, you may attempt to knck the enemy prone. If you do so, make an unarmed attack roll, the target must succeed in an AGL check against that to avoid being knocked prone.</p></div></p><p id="887202d2-2f67-4fd1-8d0e-edbc39321dd5" class="">
+</p><p id="8fdd0ae1-4ad0-4b19-85d0-a02fc1ab273d" class="">[!]<em>Bladecatcher</em><div class="indented"><p id="f041b6f4-00f9-446b-ad1f-3342844b9672" class="">Requirements: None</p><p id="8221886f-5c86-4585-a2b6-cc1e85ad6b75" class="">You may attempt to parry melee attacks while unarmed.</p><p id="5ea33a05-ab0b-418f-b0a2-d971bea6c5fa" class="">
+</p></div></p><p id="37cf4104-83ab-4d08-997d-7f9eb201694b" class=""><em>Aggressive Struggling</em><div class="indented"><p id="2c381642-0b1e-492c-a4ee-b4b724574cd8" class="">Requirements: None</p><p id="35ff385d-2b29-4709-96f2-54f79c6ad917" class="">You may attempt to make unarmed attacks while restrained with a stack of disadvantage.</p><p id="6ee9756b-9545-461d-aef3-78a780294dc6" class="">
+</p></div></p><p id="e7ed04d3-9d42-4483-92a2-11dcd013fd45" class=""><em>Cheap Shot</em><div class="indented"><p id="fe4da4ad-c290-4d38-8b82-1f97c4674667" class="">Requirements: Aggressive struggling</p><p id="e6c73334-3ac4-4a34-80a6-32ad8cb8f653" class="">Unarmed attacks against prone or restrained targets gain a stack of advantage.</p><p id="f1ae481c-c2d8-4532-b5c0-c04abb2c2571" class="">
+</p></div></p><p id="7b7e4b70-dd0f-4d68-ae12-4b9878ae1358" class=""><em>Unarmed Combat Training</em><div class="indented"><p id="d5a9ee46-1196-433d-b660-3cd4a3d40fe8" class="">Requirements: Aggressive Struggling &amp;&amp; STR 5</p><p id="ec89be50-5ac7-4793-b568-288bacad572f" class="">Your fists deal a significant wound of damage instead of a minor one.</p><p id="f599c177-a25d-4a97-8e78-bf37ec71aeb3" class="">
+</p></div></p><p id="4bdff5b6-cffe-4705-a7ca-96fb00f0df10" class=""><em>Cheaper Shot</em><div class="indented"><p id="4104506e-2f15-4a63-b91c-3cb003ea1796" class="">Requirements: Cheap Shot &amp;&amp; Good Try</p><p id="f4b66946-94c7-4040-9bf6-ef9d732497ae" class="">On critical hits, your target is knocked prone. </p><p id="919a29f5-b779-4094-8f52-86f11116b961" class="">-1 critical hit threshold.</p><p id="3fcf7eed-12eb-4645-a7c2-8085cc6f8b63" class="">
+</p></div></p><p id="84579042-bba7-4a05-aab9-14495b102be5" class=""><em>Thousand Hand Slap</em><div class="indented"><p id="07d51cf6-0785-4919-91fe-8f7a3662df31" class="">Requirements: Unarmed Combat Training &amp;&amp; DEX 7</p><p id="e1154d82-677f-4873-b0a2-a9f24cad8059" class="">When you make a successful unarmed attack, your next unarmed attack costs half as much CP (minimum of 1). This resets on a miss.</p></div></p><p id="85d0ba77-6b23-448e-b4b8-b25fa6fc11dd" class="">
+</p><p id="7d8454e0-5057-451b-b57c-91d277b94951" class="">[!]<em>Good Positioning</em><div class="indented"><p id="e0ff1d84-bc72-428b-a5d2-40e6a67814ab" class="">Requirements: Unarmed Combat Training</p><p id="e4bc71da-17a7-4c6a-b46c-b6fba06e2139" class="">Unarmed counterattacks ignore armor.</p></div></p><p id="a4dd6988-ab84-4181-ad05-e855fa85085e" class="">
+</p><p id="db471ecc-f9ab-4212-8cb3-387db701dfdd" class=""><em>Iron Will</em><div class="indented"><p id="292f9c80-2bb7-409f-ad4f-f0727943bb25" class="">Requirements: CON 5</p><p id="cdfe4ea4-b5cb-4189-8506-67de9eb940fb" class="">You may spend 5CP to brace, reducing all damage by one significant wound until the start of your next turn.</p></div></p><p id="0015dda5-60fc-4463-a934-1662dccb3946" class="">
+</p><p id="183349c2-c931-4076-89c5-69c74de68601" class=""><em>Gritted Teeth</em><div class="indented"><p id="f822e139-8202-4d4d-a3e0-6c28b4df4554" class="">Requirements: Iron Will</p><p id="dda710e3-f15f-4d27-8811-5d3bccfdd931" class="">If you have a crippled limb, you may take a minor wound to the limb and your torso to perform an action which requires that limb. This damage cannot be blocked.</p><p id="9b52d998-fccb-4e4c-9568-a5b929a44614" class="">
+</p></div></p><p id="20bdefba-89e0-4fba-936a-bb68ae6311f1" class=""><em>Blood Rage</em><div class="indented"><p id="35657765-79aa-4668-a2de-af124f440141" class="">Requirements: CON 5</p><p id="01474290-0ff6-491f-ad98-369cdd8a3333" class="">Gain +5 AP while damaged. Eliminate negative AP/MP/CP penalty while damaged.</p><p id="028686b4-1766-4a05-bb3c-f28fef5454a9" class="">
+</p></div></p><p id="c6bec770-f873-4772-a15f-eb8c2fc7671a" class=""><em>Red Haze</em><div class="indented"><p id="4a1bca47-4730-4000-8d03-70f69fa6f90e" class="">Requirements: Blood Rage</p><p id="f65de67a-0ef7-45ce-82f3-6537e1e276b9" class="">Gain +1 MP or +1 CP for your next turn whenever you are hit during an enemy turn.</p></div></p><p id="a7c0ca04-9f0c-4374-89ca-27d307cb12e3" class="">
+</p><p id="83a28918-99b2-4c7c-b8d6-be9358301883" class=""><em>Light Feet</em><div class="indented"><p id="8be44702-3c3e-44fb-95cd-4a7d1c2cc3d0" class="">Requirements: DEX 4 &amp;&amp; AGL 4</p><p id="e9882f84-befc-4f3d-89a0-f9e5489b59d8" class="">You may choose to move at 2x AP cost. If you do so, enemies suffer -5 to spotting you.</p></div></p><p id="87c98070-965f-49ca-99ad-0b1a71be928a" class="">
+</p><p id="954a6063-7eb7-4b17-8d0e-385a69654c57" class=""><em>Steady Breath</em><div class="indented"><p id="e18819db-9b8a-4ce5-aaf1-d2f42677be10" class="">Requirements: DEX 6</p><p id="6159506e-1c40-4a8e-aae9-31fb7c2c5361" class="">Your first aim action taken each turn while in stealth costs no CP.</p><p id="a1316361-03c5-4f4b-b18c-d8a9b73d677f" class="">
+</p></div></p><p id="532ad3c4-d9a8-412f-8a9c-e0a7438ab43b" class=""><em>Deadly Aim</em><div class="indented"><p id="2f3ef1b4-b4fd-4b05-96a5-e9794919026e" class="">Requirements: Steady Breath</p><p id="cc4ef907-ab8c-4661-a7ef-48eac29dc989" class="">Wounds from stealth attacks are upgraded by 1 level.</p><p id="40d3b240-a49d-4e25-be43-b8585e64e532" class="">
+</p></div></p><p id="3cf5b452-df42-4e36-922b-5013e79405d9" class=""><em>Blinding Speed</em><div class="indented"><p id="3b68ec92-8676-4383-9806-23a25dd7505c" class="">Requirements: Light Feet &amp;&amp; 6 AGL</p><p id="73ee7f20-7c3b-4bb4-acb0-3108709260cf" class="">As a reaction, if you are spotted, you may immediately take a bonus turn with any remaining AP you have. If you break line of sight during this bonus turn, you are not spotted. If you kill the enemy or enemies who spotted you during this bonus turn, you are not spotted.</p><p id="42f26a8c-1610-480e-add4-cee00fd1c061" class="">
+</p></div></p><p id="790ddba9-d06c-4a67-beda-2445ed40078e" class=""><em>Rapid Repositioning</em><div class="indented"><p id="ea35bac8-a0e0-4904-ab3d-8fc416fdd972" class="">Requirements: AGL 7</p><p id="0d875f79-e248-4c31-a59b-4a317484142c" class="">At the end of your turn, if you are not in stealth, you gain 10MP to use immediately. This bonus MP lasts until the end of your turn.</p><p id="9b9fe055-acc0-42b5-ba93-868f483c1e14" class="">
+</p></div></p><p id="792c5473-e011-4feb-82f2-87cefc04c1d9" class=""><em>Preternatural Balance</em><div class="indented"><p id="7de68910-7183-45c3-8082-374dc50c8e85" class="">Requirements: AGL 5</p><p id="0748aad3-d1d6-466f-8f19-fbbb78844b47" class="">Gain a stack of advantage when attempting to resist forced state-changes (i.e. being knocked prone).</p><p id="49a9d461-f6a2-47aa-adda-9d710ff6b6da" class="">
+</p></div></p><p id="61921656-041d-4dfd-a755-6c44026ffaa9" class=""><em>High-Strung</em><div class="indented"><p id="2e2729c9-8c0a-47d3-8ce3-831420db97de" class="">Requirements: AGL 5</p><p id="2bb0b788-cac4-4337-acd1-b05d7f8ea5ec" class="">Your first dodge each turn costs no MP.</p></div></p><p id="cda8a67f-285b-4704-a66b-67b36bebdf19" class="">
+</p><p id="61bf6d28-5297-4d26-bf08-69c21b0641a5" class=""><em>Quick Reflexes</em><div class="indented"><p id="7a522549-8e38-4da8-a2e7-6ecc6ee57b7a" class="">Requirements: AGL 5 &amp;&amp; DEX 5</p><p id="16fe199b-598e-4f53-8380-99412642a6ff" class="">Counterattacks cost no CP.</p><p id="ec2975c0-d06c-4423-923a-bb664dd45243" class="">
+</p></div></p><p id="a3651b42-0964-40af-88c7-59dd4ec5f64a" class=""><em>Evasion Training</em><div class="indented"><p id="44e0a9a3-bd70-4db5-8236-9c10a1bb0b4e" class="">Rquirements: AGL 5 &amp;&amp; DEX 5 &amp;&amp; High-Strung</p><p id="2b4c8e78-fe0b-48ce-8ca6-573e14171e38" class="">Dodging costs 1 less MP.</p></div></p><p id="24e70ea8-a3f1-4498-996d-9c6db34e8df4" class="">
+</p><p id="7c3354b7-42aa-45b1-bd5f-d11c4e3a1ebd" class=""><em>6th Sense</em><div class="indented"><p id="0b719d7f-fd88-4762-a1fd-865cdaf08fd8" class="">Requirements: AGL 7 &amp;&amp; Quick Reflexes</p><p id="d4842e4f-550f-4f9a-bf3d-5a5a21708cb0" class="">You may parry attacks made behind you.</p></div></p><p id="6e728e03-94e3-4188-838f-74b4c5f3d191" class="">
+</p><p id="b4c760b6-8c5a-44ce-a0ab-d4776bd78d07" class=""><em>Quicker Reflexes</em><div class="indented"><p id="68108938-bd75-4fdb-ad21-4ab8e0dee1e5" class="">Rquirements: DEX 6 &amp;&amp; 6th Sense &amp;&amp; Quick Reflexes</p><p id="5a9e96e3-17ed-4ca8-8171-8c6d6bf4d46c" class="">You may attempt to catch any projectile flying your way.</p></div></p><p id="ac1433d6-dcd5-42ed-b1c7-2db222ea372c" class="">
+</p><p id="56bb0fbd-67c0-4625-af32-79d8321e07f7" class=""><em>Parry Training</em><div class="indented"><p id="42de4e73-d24f-462f-ab6d-adcfd736e6a5" class="">Requirements: Quick Reflexes &amp;&amp; Try Again &amp;&amp; DEX 6 </p><p id="620f0b3e-d4a1-4abb-b7a9-c7fd8580a2c1" class="">Your first parry each turn costs no CP.</p></div></p><p id="af6298c4-483a-401d-90ad-36dded58c17a" class="">
+</p><p id="482605b8-efed-48ec-b96c-523ffbbc27d6" class="">[!]<em>Grumble grumble</em><div class="indented"><p id="a03f5014-c65d-4976-8ce7-ef60021acef5" class="">Requirements: CHR 5</p><p id="54a54e1a-479e-477d-92c5-e21a6266fb83" class="">You can effect an extremely intimidating voice.</p><p id="7fa9a82c-e0cf-4574-b7a3-6cdbb65e4c2b" class="">
+</p></div></p><p id="f1e87f35-beec-4380-b049-9004431f4138" class=""><em>Knock...knock</em><div class="indented"><p id="9741ebd4-57ca-46f1-ab2c-95e67165e9d2" class="">Requirements: CHR 5</p><p id="94766be0-9cc9-4f55-a58f-71525a23cf48" class="">You may menacingly perform any action.</p><p id="9249403d-12d1-4a3f-b6a2-da1c0cc60ca9" class="">
+</p></div></p><p id="49957400-0a59-40eb-a119-66ee0633a9d7" class="">[!]<em>Assisted Initimidation [Me and my friends here...]</em><div class="indented"><p id="4ed1fac8-903d-4b77-abc1-ec37dbd0938f" class="">Requirements: CHR 5</p><p id="12f7350b-2376-4ffa-baf5-591858b62e08" class="">When attempting to intimidate someone, any attempt made is also made by anyone else in your group.</p></div></p><p id="568ff372-b59a-459f-9015-af76a9073437" class="">
+</p><p id="b3dbc298-dfa5-4c76-9b29-6461adc4da55" class="">[!]<em>Tricks of the Trade</em><div class="indented"><p id="e14cf837-8ebd-49ba-b0a7-8be4c532116b" class="">Requirements CHR 7</p><p id="e16565f3-99f6-4928-ab4d-43f8c4fc6eb6" class="">You cannot be intimidated.</p><p id="c52ba374-f146-46eb-8ce4-c648133f8bdf" class="">
+</p></div></p><p id="7f971edb-5fab-483f-a509-078577cdd1e2" class=""><em>Looks that kill</em><div class="indented"><p id="59d9a1a8-51ce-4c39-ae0b-e2655ba438ed" class="">Requirements: CHR 7</p><p id="cd680eef-1eef-4dec-984c-b4aa9194305e" class="">If someone attempts to start a conversation, you may make a nonverbal intimidation check to prevent the conversation from happening.</p><p id="76cb30f8-0e2a-492c-ba14-a28576434354" class="">
+</p></div></p><p id="5ce592e0-af05-46fe-8010-2a242f232389" class=""><em>Show of Force</em><div class="indented"><p id="d820d9e5-269c-47c7-a470-91af3ea15025" class="">Requirements: CHR 8</p><p id="74beadca-e09f-4692-a40a-a95d0e8230b0" class="">If you kill someone in a non-combat scenario and there is no law enforcement nearby, it counts as successfully intimidating everyone in the vicinity.</p><p id="161d9d10-362f-4be8-b8c5-8b131c483dbc" class="">
+</p></div></p><p id="22eec7db-2d7b-4727-b29d-d84c02a7e3bd" class="">[!]<em>Enraging Conversation [Call my bluff]</em><div class="indented"><p id="e1a26912-5382-4bf4-9a82-cb75ec740db4" class="">Requirements: Looks that kill &amp;&amp; Show of Force</p><p id="96f50e1f-f68f-41ac-9292-aad1121ef4e7" class="">If you attempt to intimidate someone, they must either succumb to the attempt or instantly initiate combat.</p><p id="ca3af4d2-4a38-4534-ab68-0a48e4527707" class="">
+</p></div></p><p id="da4a41bb-4d9a-4644-b933-d79a6591735f" class=""><em>But, wait! [Just-let-me-say-this!]</em><div class="indented"><p id="52d80d39-a854-48dc-bd4e-6668fccf2a80" class="">Requirements: CHR 4</p><p id="7c21cd3c-17a5-4048-afc4-bf251a63fef3" class="">The first time a conversation partner ends a conversation, you may instead act as if it was still going. </p><p id="b5ed4ca5-f350-45c6-944a-f4290cfafd6c" class="">
+</p></div></p><p id="56d601d4-9d78-41fa-ac5b-1bf80f071c2b" class="">[!]<em>The Invisibles</em><div class="indented"><p id="43255054-86f5-4cf3-937b-f79adc39df12" class="">Requirements: CHR 4</p><p id="0b2d2609-c7c8-4b94-a40b-6bf00f64c28c" class="">You can vanish into a crowd.</p></div></p><p id="57775d7a-7191-4138-9145-0f6fc89d5e7f" class="">
+</p><p id="9d26bffc-db8c-4b19-b3b2-7ca9fcd9b6ad" class=""><em>Disguise Training</em><div class="indented"><p id="66964137-b806-4d97-ac83-8dee78edc40e" class="">Requirements: CHR 5</p><p id="c95de251-cf54-4b58-b538-4ffa1f097c91" class="">You can obscure your appearance, rendering you unable to be identified by sight alone.</p></div></p><p id="fe499b33-3eff-4d3f-a499-e66e7ffac642" class="">
+</p><p id="98f4d01c-fc7d-4741-830a-dad6ad44e8ab" class=""><em>Imitation Training</em><div class="indented"><p id="1bedc2b3-81dd-428e-810d-7aed082c54f7" class="">Requirements: CHR 5</p><p id="d4dd0784-16b8-40b2-8f7d-9e3f2f81eea0" class="">You can imitate the voice of anyone you have heard speak for 10 minutes or more or been in conversation with</p></div></p><p id="40f934af-6e2f-4e0a-9920-981e1a211ed6" class="">
+</p><p id="80af47a4-ef20-4d73-b036-ae34a58d4e48" class=""><em>Smooth Talker</em><div class="indented"><p id="eb40c8eb-acc6-4a2d-9737-766ab0f2034f" class="">Requirements: CHR 5</p><p id="8a5cf5e8-d5b7-46ed-814e-2e29f9e29311" class="">Any stammers, stutters, etc you make while speaking in-character are treated as though they didn&#x27;t happen.</p><p id="dfa7336a-a486-406e-87b0-3bde83145c06" class="">
+</p></div></p><p id="363cec9b-75cc-4bc9-9a3a-724169ab42e1" class=""><em>Imitation Perfection</em><div class="indented"><p id="6d9a826c-fc19-4f9a-b3d0-bf3877243e5f" class="">Requirements: CHR 6 &amp;&amp; Imitation Training</p><p id="6db01a5b-6890-440c-936e-d95065325468" class="">You can imitate any handwriting you’ve seen, provided you have seen a reasonable sample.</p><p id="b3ec8903-fcb5-4844-bae7-6e98368be8f4" class="">
+</p></div></p><p id="eb5fbc09-0418-42ee-91e7-9194ff70991a" class="">[!]<em>Forger</em><div class="indented"><p id="c2083e85-6354-4d29-a1a0-a13719c150dd" class="">Requirements: CHR 7 &amp;&amp; Imitation Perfection</p><p id="04c764dc-09b0-4dd1-b057-810914017ed1" class="">You may forge items. These forgeries pass common muster, but skilled craftspeople or those knowledgeable in the requisite field can identify them.</p><p id="d2361302-92da-40fe-8e7b-d37cc119fe6d" class="">
+</p></div></p><p id="86c75687-282e-45b5-babe-f2df0e2c2cd7" class=""><em>Quick Thinker</em><div class="indented"><p id="d421d4eb-8d75-42b0-9b42-ec17c6637db2" class="">Requirements: CHR 6 &amp;&amp; Smooth Talker</p><p id="e07a6ab2-43e5-410f-b922-dd2a758e9357" class="">The first time you fail an attempt at deception, you may continue the conversation as if you hadn’t.</p></div></p><p id="4120b3c0-5128-48bc-ae42-d8a0f8d6978e" class="">
+</p><p id="78bc680c-583a-45ad-ba9e-4a43a9d473b7" class=""><em>Control the Conversation</em><div class="indented"><p id="823d5cba-2b02-496f-bee1-083e7b010c71" class="">Requirements: CHR 8 &amp;&amp; Quick Thinker</p><p id="c91a7cc9-4412-4ed4-a7ac-68c2faf83f84" class="">A conversation does not end until you let it end or combat is initiated.</p><p id="60284a70-28f4-4a9d-91a2-a8d73544711c" class="">
+</p></div></p><p id="45f988f1-ded1-44e6-919f-79a2971a0585" class=""><em>Inspiring Nature</em><div class="indented"><p id="a6d01ed9-d7d6-4bfd-be28-0e72fc92754d" class="">Requirements: CHR 6</p><p id="0cc9ac2b-bdb6-4479-8b1b-a79dc3d9da80" class="">You may spend 15 AP and move an ally to the top of the initiative order</p><p id="5d7030ba-7262-433a-9a50-abcbea05e7f6" class="">
+</p></div></p><p id="3ea13e54-85b0-41a3-a981-116cd34aed2d" class="">[!]<em>Backdoors</em><div class="indented"><p id="dbc901da-4cf4-4ea5-a797-5c8eb4461399" class="">Requirements: INT 6</p><p id="8dc0f609-1023-40bb-a536-018d2602a9ce" class="">When you stop hacking a system, you may leave a backdoor, allowing you to begin hacking it again from the point you finished.</p><p id="2f1bc31d-123e-4152-9919-0c5ace474b99" class="">
+</p></div></p><p id="c686d995-9746-459c-96cd-90a8204f5842" class=""><em>Feinting</em><div class="indented"><p id="f1380e23-4d49-4a9d-b0bb-caadc20ed28f" class="">Requirements: AGL 6</p><p id="af2de00d-5b46-4700-ba84-e588c479306e" class="">When an enemy dodges your first melee attack against them, you may make a counterattack against them.</p><p id="6dde6d5d-79de-4b12-8b8e-e41ed15c7e03" class="">
+</p></div></p><p id="7eb971e7-badd-4c6c-a935-d08355574f95" class=""><em>Sharp-eyed</em><div class="indented"><p id="471287d5-b5b3-4ceb-b1e1-7b221382280b" class="">Requirements: None</p><p id="ab152127-2c52-495e-8369-4f28d71f36ff" class="">Gain a stack of advantage on spotting characters who are in stealth. </p><p id="154cd74a-7a33-4e66-bfb5-539d492a0df0" class="">
+</p></div></p><p id="c1a29e67-5746-4b01-a694-113d5526f9ad" class=""><em>Paranoid</em><div class="indented"><p id="75b73776-fcd6-47da-acfc-d947ed20b1f8" class="">Requirements: None</p><p id="5047c4c9-6f91-4574-9e7a-5ef75a440f85" class="">Gain +3 to initiative rolls. You cannot be surprised while conscious. Enemies gain no advantage stacks when attempting to attack you when hidden.</p><p id="e3198770-68fc-4e5c-925f-b8ace0df40ef" class="">
+</p></div></p><p id="2a8d1330-289b-46a9-9b09-ca3fd4085aa8" class=""><em>Bull Rush</em><div class="indented"><p id="bd664406-f1a6-47f6-9b1b-e596209df4e5" class="">Requirements: None</p><p id="0515ad0b-b93f-475e-bf44-f9e8dc93e2c0" class="">If you spend all of your MP in one turn, gain +5 CP until the start of your next turn.</p></div></p><p id="453ba82c-765f-456e-ab78-e9a92cc8218e" class="">
+</p><p id="a70dae26-98b3-4afa-8a7e-80d85c536c9a" class=""><em>Sniping Specialist</em><div class="indented"><p id="a02b9558-90fb-4e25-8aca-b430429401cd" class="">Requirements: DEX 5</p><p id="1a18adea-ba0f-4759-850f-8c510bedeb7a" class="">Reduce your falloff modifier by 1/3 metres.</p><p id="0de48bc7-51ce-4f9e-98df-66f791fd6b7c" class="">
+</p></div></p><p id="bf5da263-8b06-46a6-9e0b-3ce32698666b" class=""><em>Close Combat Specialist</em><div class="indented"><p id="673edcaf-3888-42b3-9b38-f6bc56d06fec" class="">Requirements: AGL 5</p><p id="bc89dd80-81d3-4c8a-b120-1ac8ec12372f" class="">Reduce your proximity modifier by 1/2 metres.</p><p id="e35bae70-eced-4318-886f-ddd9cbe4bc39" class="">+2 AP</p><p id="257a0565-49a3-467d-a643-552234c464c4" class="">
+</p></div></p><p id="b9240778-8bc0-4a87-af78-04f83586aa45" class=""><em>Counterattack Training</em><div class="indented"><p id="2dd36895-4bcd-4ebc-bb9a-33a56a423236" class="">Requirements: AGL 5</p><p id="365056c2-36db-49f0-acaa-32a9c742ed39" class="">If you successfully parry an attack, you may make a free unarmed counterattack. If this attack hits, your opponent loses 3 AP until the end of their next turn.</p><p id="39025421-b9ea-43de-bfcd-bfece0a324e4" class="">
+</p></div></p><p id="e84daddc-a758-4c2a-b3b2-d14d1a9cf4e9" class=""><em>Berserker Training</em><div class="indented"><p id="b256f2c2-7cf9-4eaa-a179-b58867ff2482" class="">Requirements: STR 4 &amp;&amp; DEX 4 &amp;&amp; AGL 4</p><p id="5089e42c-8fb4-4464-ac85-4804adf59262" class="">While wielding a melee weapon in either hand, you have 2 attempts to parry any attack (that you would be able to parry normally). Additionally, when you make a melee attack, you may follow up with another melee attack at -2 CP cost.</p><p id="73c012fb-ff15-4f6c-b75f-ab51cfb8e14b" class="">+3 CP</p><p id="db8238ea-e69b-4508-af5b-382c83bca47c" class="">
+</p></div></p><p id="59234a2d-ed32-4e59-b431-6e82ec1e287b" class=""><em>Kata Training</em><div class="indented"><p id="272f2977-eccb-4b92-b2df-044b36da25b2" class="">Requirements: DEX 6</p><p id="44f1989e-3211-47a4-aa5a-86b3f2b67e8d" class="">While wielding a ranged weapon in both hands, if you move after making a ranged attack, your next ranged attack costs half as much CP.</p><p id="856a2c35-4c30-4467-9b71-b121426aa300" class="">+3 MP</p><p id="8f1a3d88-356c-444a-b404-f21801deb9ea" class="">
+</p></div></p><p id="9f2f2ca5-d45d-4fab-b642-d595f6a85d3b" class=""><em>Stick and Move</em><div class="indented"><p id="852f4f56-4527-4ef8-b082-006bc1f6a5ac" class="">Requirements: AGL 5 &amp;&amp; PER 5</p><p id="c96eb3f9-87e8-4d05-910e-d970271ceda6" class="">While wielding a single ranged weapon, after moving, your first aim action has -1 CP cost.</p><p id="5d3b2edb-1dfd-4474-8d5e-c072f7eb6d7f" class="">+3 MP</p><p id="79930fb2-3ee6-4161-b5eb-daea6ab14a38" class="">
+</p></div></p><p id="e0d7bdd2-feeb-4ad8-bff3-77712971a66f" class=""><em>Stable Shooting</em><div class="indented"><p id="f5139c7e-03b6-43c0-ad56-c98c6c4ce69b" class="">Requirements: PER 6</p><p id="55aabcea-3c6e-43c9-94e8-66652bf16e6a" class="">While crouching, you have +1 to hit with ranged attacks. If you are prone, this bonus increases to +2.</p><p id="72cc2d1b-24c1-4be8-8104-6a0f1b1a04a2" class="">
+</p></div></p><p id="8e5ad7de-0612-402a-98f3-4243f87715d3" class=""><em>Tough</em><div class="indented"><p id="d8e8549f-29c4-449b-8933-27a893b9d81e" class="">Requirements: CON 6</p><p id="ed9d699d-b93c-4926-8059-7224b2a4cf94" class="">Bleeding and cascading damage are reduced by a level</p><p id="d5854c94-12c4-47c1-962b-8216c100a1ae" class="">
+</p></div></p><p id="5b7c9cec-b0f0-4f95-9d53-3196cda29d69" class=""><em>Eidetic Memory</em><div class="indented"><p id="7320188f-d87d-47c2-8b44-d1458351c729" class="">Requirements: None</p><p id="a39d2ac2-a209-4949-8e8c-0012673f001c" class="">You have perfect recall of anything you&#x27;ve experienced in your life.</p><p id="190d9ea2-3c51-4eb8-bb11-bdec4ee0052b" class="">
+</p></div></p><p id="f792b58d-97d8-4bda-ba9d-cf31e1059d5d" class="">[!]<em>Zero-G Maneuvering</em><div class="indented"><p id="02f0ac38-d7c4-433f-84da-be81352c7234" class="">Requirements: AGL 4</p><p id="2052e8f8-c234-415f-a59c-73d303607993" class="">You can move at will in Zero-G, at triple MP cost.</p><p id="5d5bf0f2-6c17-463b-bd31-bbb45e7262eb" class="">
+</p></div></p><p id="ed70a4a6-7cf2-482d-bf4c-137f082d39a9" class=""><em>Proficient</em><div class="indented"><p id="cae79d0b-6e75-4a3c-a9eb-af45e28309ed" class="">Requirements: None</p><p id="9df33c5f-5f75-4f09-990b-ae2f5ebc4f1e" class="">Gain an additional point with which to buy dice for any one stat. This does not increase that stat, but you may reallocate all of your dice points</p></div></p><p id="1c61e045-70fc-4496-8a12-e9aa15f94238" class="">
+</p><p id="979bab6d-3524-4cde-9015-151695ae6d0c" class="">[!]<em>Last Wind</em><div class="indented"><p id="ad684fbe-8651-44df-811f-d3eb6a2f5de2" class="">Requirements: None</p><p id="aaa6c26d-c0e4-49e7-8c24-8be570bc503a" class="">You may spend any dice to add their max value to any role. You may do this after you know the results of the roll. This removes the dice from your pool for that stat for 24 hours.</p><p id="95b59f89-efc1-425d-9135-613ffdd1b3ba" class="">
+</p></div></p><p id="70210319-abfe-420b-8504-e095e9b8e47f" class=""><em>Sentinel</em><div class="indented"><p id="0dc4dd09-1561-4fa6-aa83-d17bff729618" class="">Requirements: PER 6</p><p id="3fe9a3f7-c957-4844-a084-3ee8f8885347" class="">When an enemy makes a reaction, you may makes a reaction against them first.</p><p id="f80fc695-1c5d-43d7-91c4-b5c183187784" class="">
+</p></div></p><p id="40e9303a-9ea4-4394-8fc8-dccd4d4e2aea" class=""><em>Clothesline</em><div class="indented"><p id="c8a46e67-9a2c-4f7a-9d2e-4863a878ce58" class="">Requirements: None</p><p id="1414532e-0fb7-4039-8222-251276e7e47c" class="">When you make a melee reaction attack against an enemy, they lose all of their MP until the start of their next turn.</p><p id="097de964-d5b5-4702-a17a-eec3b6e18610" class="">
+</p></div></p><p id="0574f4be-124f-48b7-b8dc-a43091d8c734" class=""><em>War Cry</em><div class="indented"><p id="4d9fe5d9-9ee9-4c4f-bcb1-b73b4875f024" class="">Requirements: None</p><p id="dc9764d9-5840-4ccb-b16e-9417809d256a" class="">You may spend 10CP to unleash a fearsome battle cry. All enemies in the vicinity must succeed in a CHR check against you or become frightened.</p></div></p><p id="09e00564-0022-409f-bd0d-516982e70ba8" class="">
+</p><p id="cb90e3f1-ab6f-483e-9655-fcf622759e1b" class=""><em>Nimble</em><div class="indented"><p id="245e03e4-bf4e-4359-806d-07a594b07880" class="">Requirements: AGL 5</p><p id="546b4062-27c8-4f7e-8273-cca9e33ee398" class="">Gain a stack of advantage when attempting to resist grappling effects.</p><p id="81bfcfac-271c-4b0d-9c58-9f5f01e7b515" class="">+3 MP</p><p id="2f7464a5-dee5-4906-915c-be85120022bc" class="">
+</p></div></p><p id="a0c73f2c-9830-4eb2-8a23-84590ae5eb9f" class=""><em>Jump Attack</em><div class="indented"><p id="0f5e1bc7-1c56-4003-aed8-059033855c33" class="">Requirements: DEX 5 &amp;&amp; AGL 5</p><p id="15b5fdac-8b70-4a44-bde8-f480d523dfb6" class="">If you perform a melee attack immediately after jumping in the direction of an enemy, your attack damage is upgraded by one level</p><p id="008c4a97-8eee-46b7-a8c1-6a8507149e25" class="">+2 AP</p><p id="d4876b0c-dbfd-4df2-a0c3-340830de4948" class="">
+</p></div></p><p id="2347b13a-f6c3-4f7d-a71d-649646b08e67" class=""><em>Mechanic</em><div class="indented"><p id="69f38fac-dac9-4af8-8fb6-03a41887c8b2" class="">Requirements: INT 6</p><p id="563274dd-7bd1-4e79-b00b-b96c541a5e9b" class="">Gain a stack of advantage when attempting to repair something</p></div></p><p id="17052358-9db5-4089-a8ba-da0b827df634" class="">
+</p><p id="31523096-4b6a-4969-99ea-4858304ba783" class=""><em>Wait for your moment</em><div class="indented"><p id="f70ace41-b72b-4b63-9c83-067387eadb47" class="">Requirements: AGL 4</p><p id="55b2b5c7-90ec-4d09-8473-9045d2068f74" class="">You may move your turn up to 3 steps down the initiative order. Doing this ends your turn until it comes up again.</p></div></p></div></article></body></html>

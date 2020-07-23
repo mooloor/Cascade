@@ -1,0 +1,626 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Characters</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="3ab29730-c1b4-44b3-af72-bd06aeeeb981" class="page sans"><header><h1 class="page-title">Characters</h1><table class="properties"><tbody><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M6.98643729,14.0000972 C5.19579566,14.0000972 3.40419152,13.3106896 2.04245843,11.9323606 C-0.681017475,9.21200555 -0.680780251,4.76029539 2.04293482,2.04012507 C4.76664406,-0.68004331 9.22427509,-0.68004331 11.9480135,2.04013479 C13.272481,3.36277455 14,5.1330091 14,6.99552762 C14,8.87640182 13.2721894,10.6285043 11.9480135,11.9509302 C10.5679344,13.3105924 8.77756503,14.0000972 6.98643729,14.0000972 Z M10.2705296,7.00913883 L10.2705296,8.46099754 L10.2705296,8.65543362 L10.076181,8.65543362 L8.6543739,8.65543362 L5.72059514,8.65543362 L5.52619796,8.65543362 L5.52619796,8.46099754 L5.52619796,5.52541044 L5.52619796,3.37946773 L5.52619796,3.18502193 L5.72059514,3.18502193 L7.17253164,3.18502193 L7.36692883,3.18502193 L7.36692883,3.37946773 L7.36692883,6.81467358 L10.076181,6.81467358 L10.2705296,6.81467358 L10.2705296,7.00913883 Z M12.1601539,6.99552762 C12.1601539,5.61697497 11.6190112,4.32597154 10.6393933,3.34769528 C8.63253764,1.34336744 5.35197452,1.34061603 3.34153136,3.33944106 C3.33868273,3.34219247 3.33607716,3.34494388 3.33322852,3.34769528 C1.32397148,5.35459953 1.32372842,8.63641682 3.33322852,10.6433794 C5.34295224,12.6504489 8.62968901,12.6504489 10.6393933,10.6433794 C11.6190112,9.66506426 12.1601539,8.37408027 12.1601539,6.99552762 Z"></path></svg></span>Created</th><td><time>@Dec 18, 2019 5:46 PM</time></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-green">Done</span><span class="selected-value select-value-color-green">Player</span><span class="selected-value select-value-color-pink">Rules</span></td></tr></tbody></table></header><div class="page-body"><p id="5741e65e-8d29-450b-8578-55d44f4a42bb" class=""><strong>Stats:</strong></p><p id="1d767d10-d282-4eed-9deb-e841c2dd61bb" class=""><em>Strength/STR</em> - Determines how brawny you are</p><p id="790e8cb9-53c5-47cd-ad6c-453e84d7a08f" class=""><em>Constitution/CON</em> - Determines how hardy you are</p><p id="203877fb-ae5b-40ea-b5a1-ad45fe6213bf" class=""><em>Agility/AGL</em> - Determines how fast you are</p><p id="4e67933e-ad6c-49ca-9f58-c8adc2a4d55f" class=""><em>Dexterity/DEX</em> - Determines how fast your reflexes are</p><p id="8adfdfeb-cadc-4fb9-a0f8-a2288b3ee2c8" class=""><em>Perception/PER</em> - Determines how observant you are</p><p id="bbb4b3ed-a39e-4c68-84d4-41dfd58a4727" class="">Charisma/CHR - Determines how likeable you are</p><p id="5ebf8e8b-e3e9-4171-9faa-0e91dcb83644" class=""><em>Intelligence/INT</em> - Determines how well you learn and how much you know</p><p id="da4bf26a-271d-4a0d-9ace-231361c18fa8" class=""><em>Luck/LCK</em> - Feeling lucky, punk?</p><p id="555ef087-fbcf-43b1-a5ae-5ef5921ca5bf" class="">
+</p><ul id="c747d39f-477e-41c2-9726-820e9cb05014" class="toggle"><li><details open=""><summary><strong>Stat allocation:</strong></summary><p id="ef45e206-2717-4882-b015-c1561d1c8f3d" class="">There are 2 ways to allocate your character’s stats: cloning and natural birth.</p><p id="0dd1ca37-fd01-467d-93ef-491df6fd4e28" class=""><em>Cloning</em>: Your character was grown in a tank, created to fill a specific purpose. You have 40 stat points to allocate across the 8 stats as you see fit.</p><p id="ddf95bb6-746f-4d92-b626-63f327691acd" class=""><em>Natural Birth:</em> Your character was the product of natural conception. Create 2 characters, these are your parents. For each of your parents’ stats, roll 1d6, if you roll below 5, the stat stays the same. If you roll a 5 or a 6, the stat instead becomes a modifier. If your parent has a modifier, add 5 to the stat and divide the resulting number by 10, this is now your modifier. Now, compare your parents’ stats. If they are both stats, pick whichever you like. If one is a modifier and one is a stat, multiply the two together and round to the nearest 1. If they are both modifiers, your character has a birth defect in that stat - set it to 1.</p><ul id="5ef1693a-ff84-4971-9cc6-a3213c005152" class="bulleted-list"><li>Ex.: Player 1 wants to generate a character. They have generated 2 clones, Bert and Ernie, with have the stats listed in table 1. For each character, player 1 rolls 1d6 for each stat. The results are listed in table 2. For every roll that is a 5 or a 6, the corresponding stat is turned into a modifier by adding 5 and dividing by 10. The results are listed in table 3. Finally, the player compares the stats and modifiers and the resulting stats are what their character will have. The final stats, rounded properly are listed in table 4.</li></ul><figure id="743dbc6f-dd21-4f7d-a21c-47632a41bfa4" class="image"><a href="https://docs.google.com/drawings/u/0/d/sTCwHUDisWeti0_fJtP0dJA/image?w=219&amp;h=284&amp;rev=1&amp;ac=1&amp;parent=1TBL0MWTZAeiDXSaN_ADOQl8PL5VPXKvvEM9uEoWDQLg"><img style="width:192px" src="https://docs.google.com/drawings/u/0/d/sTCwHUDisWeti0_fJtP0dJA/image?w=219&amp;h=284&amp;rev=1&amp;ac=1&amp;parent=1TBL0MWTZAeiDXSaN_ADOQl8PL5VPXKvvEM9uEoWDQLg"/></a></figure><p id="0982fc08-9d22-4cbc-9e6a-2f784ff83c88" class="">
+</p><figure id="fd117509-be1c-4a18-be9b-8623ecc46cf6" class="image"><a href="https://docs.google.com/drawings/u/0/d/sCl3K87HiEVtp2DKqlrjj9g/image?w=203&amp;h=284&amp;rev=103&amp;ac=1&amp;parent=1TBL0MWTZAeiDXSaN_ADOQl8PL5VPXKvvEM9uEoWDQLg"><img style="width:144px" src="https://docs.google.com/drawings/u/0/d/sCl3K87HiEVtp2DKqlrjj9g/image?w=203&amp;h=284&amp;rev=103&amp;ac=1&amp;parent=1TBL0MWTZAeiDXSaN_ADOQl8PL5VPXKvvEM9uEoWDQLg"/></a></figure><figure id="b6cb9f72-d9f5-427d-ab9e-e6a33fe329d9" class="image"><a href="https://docs.google.com/drawings/u/0/d/sR3i5OmR7cryFntKttpvvLw/image?w=219&amp;h=284&amp;rev=27&amp;ac=1&amp;parent=1TBL0MWTZAeiDXSaN_ADOQl8PL5VPXKvvEM9uEoWDQLg"><img style="width:144px" src="https://docs.google.com/drawings/u/0/d/sR3i5OmR7cryFntKttpvvLw/image?w=219&amp;h=284&amp;rev=27&amp;ac=1&amp;parent=1TBL0MWTZAeiDXSaN_ADOQl8PL5VPXKvvEM9uEoWDQLg"/></a></figure><figure id="3b6990a0-408b-48c7-9cd7-a75519c8db4c" class="image"><a href="https://docs.google.com/drawings/u/0/d/s_VqZ4LbgP8pnJqRYi_wZMg/image?w=168&amp;h=284&amp;rev=61&amp;ac=1&amp;parent=1TBL0MWTZAeiDXSaN_ADOQl8PL5VPXKvvEM9uEoWDQLg"><img style="width:144px" src="https://docs.google.com/drawings/u/0/d/s_VqZ4LbgP8pnJqRYi_wZMg/image?w=168&amp;h=284&amp;rev=61&amp;ac=1&amp;parent=1TBL0MWTZAeiDXSaN_ADOQl8PL5VPXKvvEM9uEoWDQLg"/></a></figure></details></li></ul><p id="d22f10fa-bdf4-42bf-a470-13e03946ce43" class="">
+</p><ul id="099b977f-0bcf-4ed0-b71d-b84a1b5d8f0b" class="toggle"><li><details open=""><summary><strong>Stats:</strong></summary><p id="4de9857c-a23f-404d-ba7b-1541d258e0ed" class="">d4 - 1 point</p><p id="739865cd-4bec-4210-a804-924ccd7d7197" class="">d6 - 2 points</p><p id="3e7f8b59-6623-4232-9ee9-0c1822ea48db" class="">d8 - 3 points</p><p id="550ffef9-a712-4f05-84d7-8105774d129a" class="">d10 - 4 points</p><p id="447424fd-bbc7-4064-a811-1302af34d846" class="">d12 - 5 points</p><p id="1675a8bd-d37c-4f58-88c8-930a18ef39ed" class="">d20 - 6 points</p><p id="1cd30e78-2b7c-4cf0-9bee-d99258088efd" class="">Every die has a point value that it costs to take. For each stat, the value you have determines how many dice you can buy. You must always buy a die if possible. If you have points left over, you get a flat +1 modifier to that stat’s dice rolls for each point you have left over. Every time you buy a die, the cost of another of the same type goes up by 1.</p><ul id="2881deaa-44f5-4af4-8e36-42e0f4891235" class="bulleted-list"><li>Ex.: Ernie the space-bard has 9 intelligence, and buys 1d20 at a cost of 6 points, and 1d8 at a cost of 3 points, totalling 9</li></ul><ul id="64463ac6-03c6-4e74-bb4f-530853d88079" class="bulleted-list"><li>Ex.: Bert the space-cleric has 7 constitution, and buys 1d6 at a cost of 2 points, another 1d6 at a cost of 3 points, and 1d4 at a cost of 1 point. This leaves him at 6 points spent and 1 left over, without any other dice he can buy. This extra point gets translated to a +1 modifier to his CON rolls</li></ul><p id="1ecfb8c6-72c9-454e-bb19-b2067c97506f" class=""><strong>Luck</strong> </p><p id="9d87b5c8-9cc2-410e-a75b-96da94415d9f" class="">Before attempting a roll, you may choose to use luck. You may spend luck points to attempt the relevant skill check multiple times. You must choose the most extreme result, the order being as follows: Crit fail, crit success, whichever value is closest to the minimum or maximum</p><p id="3cddfeb3-9ec2-461c-93aa-f6d4505d20dd" class=""><strong>Secondary Stats</strong></p><p id="2b08f441-7a19-4d77-8139-332e50361998" class="">STR, CON, AGL, DEX, PER, CHR, INT, and LCK are the <em>primary character stats</em>, used specifically for interacting with the world.</p><p id="7f1363a6-a549-4586-9a9a-3d7901cc0081" class="">There are 2 secondary stats as well, which describe other aspects of the character. These stats are <em>Social Standing</em> (SOC) and <em>Education</em> (EDU). </p><p id="3aeb1054-23f8-4089-9cac-16f833be0df9" class="">SOC describes where your character stands on the social ladder, and ranges from 0 (beggar, slave, etc.) to 10 (ruling nobility, super wealthy, heads of state).</p><p id="330974b9-2a13-4c02-89ae-1a24b2c03ba6" class="">EDU describes how knowledgable your character is, and ranges from 0 (completely uneducated) to 5 (post-doctoral education, professorship, leading researcher, etc).</p><p id="48bd9071-1520-4423-a701-2fdb6a2c63fd" class=""><strong>Action Points</strong></p><p id="c9176c5b-a07f-4f4a-bef0-d842afc19991" class="">All characters start with 30 AP</p><p id="8dcdb613-916d-46bd-95eb-d75d3a853e8c" class="">Gain +1 AP for every level of CON your character has</p><p id="fadb5a92-3465-43e4-b5f7-be296d7c7feb" class="">Gain +1 MP for every level of AGL your character has</p></details></li></ul><ul id="e8d77577-e783-410e-b919-003660033694" class="toggle"><li><details open=""><summary><strong>Health:</strong></summary><p id="6afc8ad2-795d-4a2f-aac9-dfea838424a6" class="">All limbs have a base damage threshold. A minor wound to any body part results in a limb-specific debuff to your character. It should be noted that this debuff stacks with every wound you take, so a significant wound would inflict 2 instances of the debuff. A significant wound inflicts a harsher debuff. A major wound results in bleeding, which inflicts 1 minor wound per turn. At 1 severe wound, the limb becomes unusable. At 1 lethal wound, the limb is cut off, torn off, or otherwise forcibly removed from the body. In the case of the torso or head, this instantly kills the character.</p><p id="20f94848-f596-40c3-9de5-684f5a2abf75" class="">Wounds:</p><ul id="bc91dc07-f2bc-4651-b306-56ec10edcbeb" class="bulleted-list"><li>Minor<ul id="1d2d9070-adde-441f-9742-99a7322c8464" class="bulleted-list"><li>Might affect an individual’s abilities</li></ul><ul id="881740ce-faf4-48b4-9039-1a7d6a4fd06d" class="bulleted-list"><li>Lost fingers or toes, large cuts, minor flesh wounds</li></ul></li></ul><ul id="960f54ef-9d34-4b28-be99-30a29b792063" class="bulleted-list"><li>Significant<ul id="5df36b8f-8879-4a8c-b95d-cef5ee9a0508" class="bulleted-list"><li>Very painful, difficult to ignore</li></ul><ul id="4bff36ab-5283-4e7c-af0b-317a7771be80" class="bulleted-list"><li>Small-calibre bullet wounds, large flesh wounds</li></ul></li></ul><ul id="ca2b1688-ea7c-445c-a944-37572ee10810" class="bulleted-list"><li>Major<ul id="1d33d70e-be48-4e02-bda7-7b13dcc87d9f" class="bulleted-list"><li>Potentially fatal if not properly treated</li></ul><ul id="a2f8554d-94cd-4c69-9ec4-43b9d0897431" class="bulleted-list"><li>Lost extremities, damaged organs, internal bleeding, large-calibre bullet wounds</li></ul></li></ul><ul id="822a38a2-8b94-435e-a4eb-32b6d50b7589" class="bulleted-list"><li>Severe<ul id="ebab9a87-ae46-4a72-bb6c-0b7178ffe708" class="bulleted-list"><li>Severe deformation, even with proper treatment</li></ul><ul id="f7e09efa-2c98-4e21-8396-d82555f2cdbd" class="bulleted-list"><li>Lost limbs, musculo-skeletal damage</li></ul></li></ul><ul id="6c17b02f-4be5-47ba-bb56-4425e4c068fe" class="bulleted-list"><li>Lethal<ul id="191b134e-c646-4dcc-b504-03701afd6d61" class="bulleted-list"><li>Instantly kills an unarmored target</li></ul><ul id="d33bbb2e-a111-4878-a825-6276a8ba0f45" class="bulleted-list"><li>Missing head, torso, essential organs</li></ul></li></ul><p id="19a79f07-42a2-4ad7-b690-ba6f4da0fefd" class="">1 lethal wound is equivalent to 2 severe wounds, 4 major wounds, 8 significant wounds, or 16 minor wounds.</p><p id="6304efa8-82bc-40d4-9992-2b0a6011d58c" class=""><em>Wound Cascading:</em></p><p id="52a32747-8238-49fc-bd13-ee5431b34218" class="">Whenever a limb takes a major wound or more, all neighboring limbs take a wound equivalent to one level below the initial damage.</p><ul id="e38922ce-b08a-4ce2-8302-4957bb8668cd" class="bulleted-list"><li>Ex.: Oscar the space paladin takes a severe wound to the arm, inflicting a major wound to his torso, and a significant wound to his legs and head.</li></ul><p id="3d698023-d99e-49ad-8845-31f85c010761" class=""><strong>Robotic enemies:</strong><div class="indented"><p id="307d274d-2093-49fc-b327-e1b0c9b0aaf9" class="">Robotic enemies are a special case, in that they don&#x27;t have health. Instead, they have <em>vulnerable points.</em> In order to destroy a robotic enemy, all of its vulnerable points must be destroyed. Such points are destroyed when all of their armor is reduced to 0 or less. When all of a robot&#x27;s vulnerable points have had their armor reduced to 0 or less, the robot dies.</p></div></p></details></li></ul><ul id="a17b7d9e-3842-4d1d-8e9a-fbde03bbd471" class="toggle"><li><details open=""><summary><strong>Armor:</strong></summary><p id="8d0be256-6b86-4985-b427-bd05eefd6614" class="">Armor downgrades wounds by 1 level per point of armor on that limb.</p><ul id="bf76e160-d6d5-470d-89fc-df3746749100" class="bulleted-list"><li>Ex.: Oscar the space paladin is wearing chest armor with a rating of 1. Bert shoots Oscar with a rifle that would inflict a major wound, but instead inflicts a significant wound.</li></ul><p id="43c35082-f267-4fe2-96c6-ec6ca3d1d2e2" class="">Some weapons will have armor piercing, which reduces armor’s wound-reduction properties by 1 for this attack. Armor piercing cannot increase damage dealt by weapons.</p><ul id="1336b08c-198b-40c3-b9c5-ce8d878254de" class="bulleted-list"><li>Ex.: Oscar the space-paladin is wearing armor with a rating of 3. Ernie shoots Oscar with a rifle that has 1 armor piercing and inflicts a severe wound. This would be downgraded to a minor wound by the armor, but is instead downgraded to a significant wound due to the piercing.</li></ul><ul id="86efeb0b-1fbe-4b72-821d-c771ba48f68b" class="bulleted-list"><li>Ex.: Oscar the space paladin is wearing armor with a rating of 1. Ernie shoots Oscar with a rifle that has 2 armor piercing and inflicts a major wound. This would be downgraded to a significant wound by the armor, but is, instead, not reduced at all.</li></ul><p id="40749af6-fa9b-4957-b401-dd9870ff3fb7" class="">Some weapons will have armor shredding. Shredding reduces armor rating by 1 per point of shredding until the armor can be fixed.</p><ul id="03495052-b4e1-4c56-b13d-865b5f421775" class="bulleted-list"><li>Ex.: Oscar the space-paladin is wearing armor with a rating of 2. Elmo shoots Oscar with a rifle that has 1 armor shredding and inflicts a major wound. The wound is reduced to minor by the armor, and Oscar’s armor is reduced to a rating of 1. The original armor rating can be restored by someone with the skills to do so.</li></ul><p id="a90ed2db-0ba7-4fbe-a9b5-37bdd06f618b" class="">If armor is shredded to a rating of 0 or below, it no longer provides wound reduction, but remains equipped and applies any effects as though it were equipped.</p><ul id="7ddd150c-ac77-4ab4-9a78-0eaad34d4d3c" class="bulleted-list"><li>Ex.: Oscar is wearing power armor with a -1 penalty to movement. Oscar’s armor has been entirely shredded, and no longer provides wound reduction, but Oscar still has a -1 penalty to movement until he removes the armor.</li></ul></details></li></ul><p id="864d2874-a471-4f55-9dcc-a629fb17e8d0" class="">
+</p></div></article></body></html>
